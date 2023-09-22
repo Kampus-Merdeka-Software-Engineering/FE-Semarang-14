@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learn4U</title>
-    <link rel="stylesheet" href="assets/css/about.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn4U</title>
+  <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
   </head>
+
   <body>
-    <section class="sub-header">
+    <section class="header">
       <nav>
-        <a href="index.html"><img src="./images/logo.png" alt="" /></a>
+        <a href="index.html" class="nav-logo">
+          <img src="./assets/images/logo.png" alt="" />
+          Learn<span>4</span>U
+        </a>
         <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
         <div class="nav-links" id="navLinks">
           <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
@@ -25,47 +32,212 @@
             <li><a href="./index.html">HOME</a></li>
             <li><a href="./about.html">ABOUT</a></li>
             <li><a href="./course.html">COURSE</a></li>
-            <li><a href="./service.html">SERVICE</a></li>
             <li><a href="./contact.html">CONTACT</a></li>
           </ul>
         </div>
       </nav>
-      <h1>About Us</h1>
+    </section>
+
+    <section class="title">
+      <div class="title-text">
+        <h1>About Us</h1>
+        <p>Informasi Lebih Lanjut</p>
+      </div>
+      <div class="title-button">
+        <button>
+          See More
+        </button>
+      </div>
     </section>
 
     <!-- about us content -->
     <section class="about-us" id="about-us">
-      <div class="row" >
-        <div class="about-col" >
-          <div style=text-align:justify>
-          <h1>We are the best technology course </h1>
-          </p>Selamat datang di Learn4U! Tempat terbaik untuk memperluas pengetahuan dan keterampilan Anda melalui pembelajaran online. Kami adalah sarana pendidikan teknologi yang membantu Anda menjelajahi dunia pendidikan modern di ujung jari Anda. <br>
-            Dengan Learn4U, Anda dapat mengejar pendidikan Anda sesuai dengan jadwal Anda sendiri, belajar dari para ahli, dan mengakses berbagai materi pembelajaran yang menginspirasi. Kami berkomitmen untuk membantu Anda mencapai potensi maksimal Anda dalam dunia pendidikan digital,
-            Mari bergabung dengan komunitas kami dan jelajahi beragam peluang pembelajaran online yang kami tawarkan, Bersama-sama, mari kita menciptakan masa depan pendidikan yang lebih cerah,
-            Selamat belajar!</p>
-          <a href="" class="hero-btn section-btn">EXPLORE NOW</a>
-          </div>
-        </div>
+      <div class="about-us-row">
         <div class="about-col">
-          <img src="assets/images/about.jpg" alt="">
+          <div class="about-us-title">
+            <h1>We are the best technology course </h1>
+          </div>
+          <div class="about-us-text-img">
+            <div class="about-us-text">
+              </p>Selamat datang di Learn4U! Tempat terbaik untuk memperluas pengetahuan dan keterampilan Anda melalui
+              pembelajaran online. Kami adalah sarana pendidikan teknologi yang membantu Anda menjelajahi dunia
+              pendidikan
+              modern di ujung jari Anda.
+              Dengan Learn4U, Anda dapat mengejar pendidikan Anda sesuai dengan jadwal Anda sendiri, belajar dari para
+              ahli, dan mengakses berbagai materi pembelajaran yang menginspirasi. Kami berkomitmen untuk membantu Anda
+              mencapai potensi maksimal Anda dalam dunia pendidikan digital,
+              Mari bergabung dengan komunitas kami dan jelajahi beragam peluang pembelajaran online yang kami tawarkan,
+              Bersama-sama, mari kita menciptakan masa depan pendidikan yang lebih cerah,
+              Selamat belajar!</p>
+            </div>
+            <div class="about-us-img">
+              <img src="assets/images/about.jpg" alt="">
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!--------- footer --------->
-    <section class="footer">
-      <h4>About Us</h4>
-      <p>Untuk informasi lebih lanjut silakan kunjungi media sosial kami.</p>
-      <div class="icons">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-linkedin"></i>
+    <div class="our-team">
+      <div class="our-team-title">
+        <h2>Our Teams</h2>
+        <img src="./assets/images/about bottom.png" alt="" />
       </div>
-      <p>Made Width <i class="fa-solid fa-heart"></i> by Group 14</p>
+
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <div class="image-box">
+              <img src="assets/images/about-avatar.png" alt="Person 1">
+            </div>
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+          </div>
+          <div class="slide">
+            <div class="image-box">
+              <img src="assets/images/about-avatar2.png" alt="Person 1">
+            </div>
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+          </div>
+          <div class="slide">
+            <div class="image-box">
+              <img src="assets/images/about-avatar.png" alt="Person 1">
+            </div>
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+          </div>
+          <div class="slide">
+            <div class="image-box">
+              <img src="assets/images/about-avatar.png" alt="Person 1">
+            </div>
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+          </div>
+          <div class="slide">
+            <div class="image-box">
+              <img src="assets/images/about-avatar2.png" alt="Person 1">
+            </div>
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+          </div>
+          <div class="slide">
+            <div class="image-box">
+              <img src="assets/images/about-avatar2.png" alt="Person 1">
+            </div>
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="why-work">
+      <div class="why-work-title">
+        <h2>Why it's works</h2>
+        <img src="./assets/images/about bottom.png" alt="" />
+      </div>
+      <div class="why-row">
+        <div class="why-col">
+          <div class="why-img">
+            <img src="./assets/images/personalized.png" alt="" />
+          </div>
+          <div class="why-title">
+            Personalized Learning
+          </div>
+          <div class="why-text">Students practice at their own pace, first filling in gaps in their understanding and
+            then accelerating their learning.</div>
+        </div>
+        <div class="why-col">
+          <div class="why-img">
+            <img src="./assets/images/trust.png" alt="" />
+          </div>
+          <div class="why-title">
+            Trusted content
+          </div>
+          <div class="why-text">Created by experts, library of trusted practice and lessons covers math, science, and
+            more. Always free for learners and
+            teachers.</div>
+        </div>
+        <div class="why-col">
+          <div class="why-img">
+            <img src="./assets/images/tools.png" alt="" />
+          </div>
+          <div class="why-title">
+            Tools to empower teachers
+          </div>
+          <div class="why-text">Teachers can identify gaps in their students’ understanding, tailor instruction, and
+            meet the needs of every student.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--------- footer --------->
+    <!-- Footer -->
+    <section class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-info">
+                <h4>
+                  <img src="./assets/images/logo.png" alt="" />
+                  Learn<span>4</span>U
+                </h4>
+                <p>
+                  Semarang, Central Java<br><br>
+                  <strong>Phone: 0846453533535</strong> <br>
+                  <strong>Email: learn4u@mail.com</strong> <br>
+                </p>
+                <div class="icons">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-linkedin"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-links">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Popular Course</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-links">
+              <h4>Courses</h4>
+              <ul>
+                <li><a href="">Categories</a></li>
+                <li><a href="">Online Course</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-links">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Privacy</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          <strong><span>Made With <i class="fa-solid fa-heart"></i> by Group 14</span></strong>.
+        </div>
+      </div>
     </section>
-    
+
     <script src="assets/js/script.js"></script>
 
   </body>
+
 </html>

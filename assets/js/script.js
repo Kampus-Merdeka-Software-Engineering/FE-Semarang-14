@@ -1,30 +1,35 @@
+// nav bar
 let navLinks = document.getElementById("navLinks");
-function showMenu(){
-    navLinks.style.top = '0';
+function showMenu() {
+  navLinks.style.top = "0";
 }
-function hideMenu(){
-    navLinks.style.top = '-1000px'
+function hideMenu() {
+  navLinks.style.top = "-1000px";
 }
-// Modal Box
-const itemDetailModal = document.querySelector('#item-detail-modal');
-const itemDetailButtons = document.querySelectorAll('.item-detail-button');
 
-itemDetailButtons.forEach((btn) => {
-  btn.onclick = (e) => {
-    itemDetailModal.style.display = 'flex';
-    e.preventDefault();
-  };
+document.querySelector(".submit-email").addEventListener("mousedown", (e) => {
+  e.preventDefault();
+  document.querySelector(".subscription").classList.add("done");
 });
 
-// klik tombol close modal
-document.querySelector('.modal .close-icon').onclick = (e) => {
-  itemDetailModal.style.display = 'none';
-  e.preventDefault();
+// Modal
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
 };
 
-// klik di luar modal
-window.onclick = (e) => {
-  if (e.target === itemDetailModal) {
-    itemDetailModal.style.display = 'none';
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 };

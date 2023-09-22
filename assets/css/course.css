@@ -1,22 +1,31 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "roboto", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #ced3e6;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header {
-  min-height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(../images/banner.jpg);
-  background-position: center;
-  background-size: cover;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ced3e6;
+  /* border-bottom: 2px solid #8f8f8f; */
+  height: fit-content;
+  z-index: 10;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 nav {
   display: flex;
-  padding: 2% 6%;
+  padding: 5px 6%;
   justify-content: space-between;
   align-items: center;
 }
@@ -27,7 +36,7 @@ nav img {
 .nav-logo {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: black;
   font-size: 2rem;
   font-weight: 700;
   font-style: italic;
@@ -48,7 +57,7 @@ nav img {
   position: relative;
 }
 .nav-links ul li a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   font-size: 13px;
 }
@@ -64,6 +73,7 @@ nav img {
 .nav-links ul li:hover::after {
   width: 100%;
 }
+
 .text-box {
   position: absolute;
   top: 50%;
@@ -79,23 +89,6 @@ nav img {
 .text-box p {
   margin: 10px 0 40px;
   font-size: 14px;
-}
-.hero-btn {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 12px 34px;
-  font-size: 13px;
-  background-color: transparent;
-  position: relative;
-  cursor: pointer;
-}
-.hero-btn:hover {
-  border: 1px solid #c88500;
-  background: #c88500;
-  transition: 1s;
-  color: #fff;
 }
 
 nav .fa {
@@ -132,71 +125,108 @@ nav .fa {
 }
 
 /* footer */
+
 .footer {
-  width: 100%;
-  text-align: center;
-  padding: 30px 0;
+  height: fit-content;
+  /* color: #606060; */
+  background-color: #ffffff8f;
+  padding: 15px 0;
+  border-top: 1px solid #000;
+  border: 2px solid #000;
 }
+
+.footer .container {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+
+.footer .col-lg-3 {
+  text-align: left;
+}
+
+.footer-row {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .footer h4 {
-  margin-bottom: 25px;
-  margin-top: 20px;
-  font-weight: 800;
+  color: #000;
+  font-size: 18px;
 }
-.icons i {
+
+.footer h4 img {
+  width: 24px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.footer h4 span {
+  font-weight: 700;
   color: #c88500;
-  margin: 0 13px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #606060;
+  text-decoration: none;
+}
+
+.footer .copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer .footer-info {
+  font-size: 16px;
+}
+
+.footer .footer-info strong {
+  color: #606060;
+}
+
+@media (max-width: 700px) {
+  .footer .col-lg-3 {
+    text-align: center;
+  }
+}
+
+.icons i {
+  color: #606060;
+  margin-right: 10px;
   cursor: pointer;
   padding: 18px 0;
   font-size: 25px;
 }
 .fa-heart {
-  color: #c88500;
+  color: #606060;
 }
 
-.sub-header {
-  height: 50vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(../images/background.jpg);
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  color: #fff;
-}
-.sub-header h1 {
-  margin-top: 50px;
-}
-/* course */
+/* course section */
+
 .course {
   width: 80%;
-  margin: auto;
-  text-align: center;
-  padding-top: 100px;
+  margin: 0 auto;
 }
-h1 {
-  font-size: 36px;
-  font-weight: 600;
-}
-p {
-  color: #8f8f8f;
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 22px;
+
+.course-row {
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: auto auto auto;
   padding: 10px;
 }
-.section-btn{
-  border: 1px solid #c88500;
-  background: transparent;
-  color: #c88500;
-}
-.section-btn:hover{
-  color: #fff;
-}
-.row {
-  margin-top: 3%;
-  display: flex;
-  justify-content: space-between;
-}
+
 .course-col {
   flex-basis: 31%;
   background-color: #fff3f3;
@@ -206,6 +236,79 @@ p {
   box-sizing: border-box;
   transition: 0.5s;
 }
+
+.course-col .course-btn {
+  display: block;
+  margin: 5% auto;
+  text-align: center;
+}
+
+.course-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.course-tag h4 {
+  color: #acacac;
+  margin: 10px 0 10px 0;
+  font-size: 16px;
+}
+
+.course-title-rating {
+  display: flex;
+  line-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 10px 10px 0;
+
+  font-size: 18px;
+}
+
+.course-price {
+  color: #ff7426;
+  margin: 0;
+  line-height: 0;
+  font-size: 18px;
+  border-bottom: 2px dotted #000;
+}
+
+.course-text {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.course-btn {
+  width: 170px;
+  height: 40px;
+  background: #ff7426;
+  border-radius: 20px;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  line-height: 40px;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.course-btn a {
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.course-btn:hover {
+  color: #fff;
+  background: #000;
+  transition: background 0.5s ease, color 0.5s ease;
+  cursor: pointer;
+}
+
+.course-btn a:hover {
+  color: #ffffff;
+  font-weight: bold;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
 h3 {
   text-align: center;
   font-weight: 600;
@@ -229,11 +332,11 @@ h3 {
 .location iframe {
   width: 100%;
 }
-.contact-us{
+.contact-us {
   width: 80%;
   margin: auto;
 }
-.contact-col{
+.contact-col {
   flex-basis: 48%;
   margin-bottom: 30px;
 }
@@ -244,24 +347,95 @@ h3 {
 }
 .contact-col div i {
   font-size: 28px;
-  color:#c88500;
+  color: #c88500;
   margin: 10px;
   margin-right: 30px;
 }
-.contact-col div p{
+.contact-col div p {
   padding: 0;
 }
-.contact-col div h5{
+.contact-col div h5 {
   font-size: 20px;
   margin-bottom: 5px;
   color: #555;
   font-weight: 400;
 }
-.contact-col input, .contact-col textarea{
+.contact-col input,
+.contact-col textarea {
   width: 100%;
   padding: 15px;
   margin-bottom: 17px;
   outline: none;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 50px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-content label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="tel"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
 }
