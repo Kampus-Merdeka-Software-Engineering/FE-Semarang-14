@@ -4,7 +4,7 @@ function showMenu() {
   navLinks.style.top = "0";
 }
 function hideMenu() {
-  navLinks.style.top = "-1000px";
+  navLinks.style.top = "-1500px";
 }
 
 document.querySelector(".submit-email").addEventListener("mousedown", (e) => {

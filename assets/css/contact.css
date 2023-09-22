@@ -121,14 +121,15 @@ nav .fa {
   }
   .nav-links {
     position: absolute;
-    background: #f44336;
+    background: #ced3e6;
     height: 100vh;
     width: 200px;
-    top: -1000px;
+    top: -1500px;
     right: 0px;
     text-align: left;
     z-index: 2;
     transition: 0.7s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   nav .fa {
     display: block;
