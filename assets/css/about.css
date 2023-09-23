@@ -207,9 +207,9 @@ nav .fa {
 .footer {
   height: fit-content;
   /* color: #606060; */
-  background-color: #ffffff8f;
+  background-color: #ced3e6;
   padding: 15px 0;
-  border-top: 1px solid #000;
+  border-top: 1px solid #D2E9E9;
 }
 
 .footer .container {
