@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #ced3e6;
+  background: #AAC4FF;
 }
 p {
   color: #8f8f8f;
@@ -26,7 +26,7 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #ced3e6;
+  background-color: #AAC4FF;
   /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
@@ -112,7 +112,7 @@ nav img {
 
 .hero h1 span {
   font-weight: 800;
-  color: #c88500;
+  color: #1F4690;
 }
 .hero p {
   font-size: 20px;
@@ -166,7 +166,7 @@ nav img {
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #282936;
+  background: #7C81AD;
   border-radius: 1.625rem;
 }
 .hero button.learn-more .circle .icon {
@@ -204,7 +204,7 @@ nav img {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #282936;
+  color: #7C81AD;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -276,7 +276,7 @@ nav .fa {
   }
   .nav-links {
     position: absolute;
-    background: #ced3e6;
+    background: #AAC4FF;
     height: 100vh;
     width: 200px;
     top: -1500px;
@@ -303,7 +303,7 @@ nav .fa {
   width: 80%;
   margin: auto;
   text-align: center;
-  background-color: #0875f7;
+  background-color: #7895B2;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -374,7 +374,7 @@ nav .fa {
 .section-btn {
   width: 130px;
   height: 40px;
-  background: #ff7426;
+  background: #B1B2FF;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -469,7 +469,7 @@ nav .fa {
 
 .learning-info h1 span {
   font-weight: 800;
-  color: #c88500;
+  color: #1F4690;
 }
 
 .text-box-desc {
@@ -668,7 +668,7 @@ nav .fa {
 .staff-col .staff-job h4 {
   margin: 0;
   text-align: left;
-  color: #ff7426;
+  color: #B1B2FF;
 }
 
 /* call to action */
@@ -814,7 +814,7 @@ nav .fa {
 .footer {
   height: fit-content;
   /* color: #606060; */
-  background-color: #ced3e6;
+  background-color: #AAC4FF;
   padding: 15px 0;
   border-top: 1px solid #D2E9E9;
 }

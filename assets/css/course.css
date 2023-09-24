@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #ced3e6;
+  background: #AAC4FF;
 }
 
 a {
@@ -15,7 +15,7 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #ced3e6;
+  background-color: #AAC4FF;
   /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
@@ -103,7 +103,7 @@ nav .fa {
   }
   .nav-links {
     position: absolute;
-    background: #ced3e6;
+    background: #AAC4FF;
     height: 100vh;
     width: 200px;
     top: -1500px;
@@ -130,7 +130,7 @@ nav .fa {
 .footer {
   height: fit-content;
   /* color: #606060; */
-  background-color: #ced3e6;
+  background-color: #AAC4FF;
   padding: 15px 0;
   border-top: 1px solid #D2E9E9;
   border: 2px solid #000;
@@ -265,7 +265,7 @@ nav .fa {
 }
 
 .course-price {
-  color: #ff7426;
+  color: #00337C;
   margin: 0;
   line-height: 0;
   font-size: 18px;
@@ -281,7 +281,7 @@ nav .fa {
 .course-btn {
   width: 170px;
   height: 40px;
-  background: #ff7426;
+  background: #AAC4FF;
   border-radius: 20px;
   display: flex;
   color: #fff;
