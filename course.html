@@ -175,6 +175,7 @@
     </div>
   </section>
 
+
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -197,84 +198,61 @@
   <!--------- footer --------->
   <section class="footer">
     <div class="footer-top">
-      <div class="container">
-        <div class="footer-row">
+      <div class="footer-row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h4>
-                <img src="./assets/images/logo.png" alt="" />
-                Learn<span>4</span>U
-              </h4>
-              <p>
-                Semarang, Central Java<br><br>
-                <strong>Phone: 0846453533535</strong> <br>
-                <strong>Email: learn4u@mail.com</strong> <br>
-              </p>
-              <div class="icons">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-linkedin"></i>
-              </div>
+        <div class="footer-links">
+          <div class="footer-info">
+            <h4>
+              <img src="./assets/images/logo.png" alt="" />
+              Learn<span>4</span>U
+            </h4>
+            <p>
+              Semarang, Central Java<br><br>
+              <strong>Phone: 0846453533535</strong> <br>
+              <strong>Email: learn4u@mail.com</strong> <br>
+            </p>
+            <div class="icons">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-linkedin"></i>
             </div>
           </div>
-
-          <div class="footer-links">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="">About Us</a></li>
-              <li><a href="">Popular Course</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links">
-            <h4>Courses</h4>
-            <ul>
-              <li><a href="">Categories</a></li>
-              <li><a href="">Online Course</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links">
-            <h4>Support</h4>
-            <ul>
-              <li><a href="">FAQ</a></li>
-              <li><a href="">Privacy</a></li>
-            </ul>
-          </div>
-
         </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Popular Course</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="">Categories</a></li>
+            <li><a href="">Online Course</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Privacy</a></li>
+          </ul>
+        </div>
+
       </div>
     </div>
-
-    <div class="container">
-      <div class="copyright">
-        <strong><span>Learn4U All Right Reserved, 2023</span></strong>.
-      </div>
+    <div class="copyright">
+      <strong><span>Learn4U All Right Reserved, 2023</span></strong>.
     </div>
   </section>
 
-  <script>
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("myBtn");
-    var span = document.getElementsByClassName("close")[0];
-    document.addEventListener("click", function (event) {
-      if (event.target.classList.contains("myBtn")) {
-        modal.style.display = "block";
-      }
-    });
-
-    span.onclick = function () {
-      modal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "block";
-      }
-    };
-  </script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/course.js"></script>
 
 </body>
 
