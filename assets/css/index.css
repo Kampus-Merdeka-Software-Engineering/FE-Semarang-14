@@ -778,7 +778,7 @@ nav .fa {
   margin: 1px;
   padding: 0 20px;
   cursor: pointer;
-  background: #A6E3E9;
+  background:#B1B2FF;
   color: #ffffff;
   transition: width 0.35s ease-in-out, background 0.35s ease-in-out;
 }
@@ -786,6 +786,11 @@ nav .fa {
 .news-letter .subscription.done .submit-email {
   width: calc(100% - 2px);
   background:#B1B2FF;
+}
+
+/* subscription error */
+.news-letter .subscription.error .submit-email {
+  background: #ff4f4f;
 }
 
 .news-letter .subscription .submit-email .before-submit,
