@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #ced3e6;
+  background: #EEF1FF;
 }
 
 a {
@@ -15,7 +15,7 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #ced3e6;
+  background-color: #D2DAFF;
   /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
@@ -44,7 +44,7 @@ nav img {
 }
 .nav-logo span {
   font-weight: 700;
-  color: #c88500;
+  color: #3F72AF;
 }
 .nav-links {
   flex: 1;
@@ -65,7 +65,7 @@ nav img {
   content: "";
   width: 0%;
   height: 2px;
-  background: #c88500;
+  background: #000000;
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -87,7 +87,7 @@ nav .fa {
   }
   .nav-links {
     position: absolute;
-    background: #f44336;
+    background: #6499E9;
     height: 100vh;
     width: 200px;
     top: -1000px;
@@ -175,7 +175,7 @@ nav .fa {
 
 .course-price {
   text-align: left;
-  color: #ff7426;
+  color:#3F72AF;
   margin: 0;
   line-height: 0;
   font-size: 18px;
@@ -191,7 +191,7 @@ nav .fa {
 .course-btn {
   width: 170px;
   height: 40px;
-  background: #ff7426;
+  background:#A6E3E9;
   border-radius: 20px;
   display: flex;
   color: #fff;
@@ -331,7 +331,7 @@ nav .fa {
 .footer {
   height: fit-content;
   /* color: #606060; */
-  background-color: #ffffff8f;
+  background-color: #AAC4FF;
   padding: 15px 0;
   border-top: 1px solid #000;
   display: flex;
@@ -367,7 +367,7 @@ nav .fa {
 
 .footer h4 span {
   font-weight: 768;
-  color: #c88500;
+  color:#3F72AF;
 }
 
 .footer ul {

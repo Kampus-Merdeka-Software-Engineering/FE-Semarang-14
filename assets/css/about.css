@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #ced3e6;
+  background: #EEF1FF;
 }
 
 .header {
@@ -11,7 +11,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #ced3e6;
+  background-color: #D2DAFF;
   /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
@@ -40,7 +40,7 @@ nav img {
 }
 .nav-logo span {
   font-weight: 700;
-  color: #c88500;
+  color: #3F72AF;
 }
 .nav-links {
   flex: 1;
@@ -61,7 +61,7 @@ nav img {
   content: "";
   width: 0%;
   height: 2px;
-  background: #c88500;
+  background: #000000;
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -76,14 +76,14 @@ nav img {
 }
 
 .title-text h1 {
-  color: #fff;
+  color: #A6B1E1;
   font-weight: bold;
   margin-bottom: 0;
   font-size: 60px;
 }
 
 .title-text p {
-  color: #fff;
+  color: #A6B1E1;
   margin-top: 5px;
   font-size: 20px;
 }
@@ -93,7 +93,7 @@ nav img {
   width: 80px;
   font-size: 12px;
   border-radius: 5px;
-  background: #f3f25b;
+  background: #B1B2FF;
   border: 0;
   cursor: pointer;
   font-weight: bold;
@@ -101,7 +101,7 @@ nav img {
 }
 
 .title-button button:hover {
-  background: #ffc400;
+  background: #B1B2FF;
   transition: background 0.5s;
 }
 
@@ -122,9 +122,9 @@ nav img {
   font-size: 14px;
 }
 .section-btn {
-  border: 1px solid #c78500;
+  border: 1px solid #B1B2FF;
   background: transparent;
-  color: #c88500;
+  color: #B1B2FF;
 }
 .section-btn:hover {
   color: #fff;
@@ -141,7 +141,7 @@ nav .fa {
   }
   .nav-links {
     position: absolute;
-    background: #f44336;
+    background: #6499E9;
     height: 100vh;
     width: 200px;
     top: -1000px;
@@ -244,7 +244,7 @@ nav .fa {
 .footer {
   height: fit-content;
   /* color: #606060; */
-  background-color: #ffffff8f;
+  background-color:#AAC4FF;
   padding: 15px 0;
   border-top: 1px solid #000;
   display: flex;
@@ -280,7 +280,7 @@ nav .fa {
 
 .footer h4 span {
   font-weight: 768;
-  color: #c88500;
+  color:#3F72AF;
 }
 
 .footer ul {
@@ -508,7 +508,7 @@ nav .fa {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #fc611f;
+  background-color: #8EACCD;
   border-radius: 25px 25px 0 25px;
 }
 .overlay::before,
@@ -519,7 +519,7 @@ nav .fa {
   bottom: -40px;
   height: 40px;
   width: 40px;
-  background-color: #fc611f;
+  background-color: #8EACCD;
 }
 .overlay::after {
   border-radius: 0 25px 0 0;
@@ -537,7 +537,7 @@ nav .fa {
 }
 
 .card-image .card-img {
-  border: 4px solid #fc611f;
+  border: 4px solid #2E4374;
   width: 100%;
   height: 100%;
   display: block;
@@ -557,13 +557,13 @@ nav .fa {
   margin: 10px;
   display: flex;
   justify-content: center;
-  color: #fc611f;
+  color: #5CD2E6;
   transition: color 0.3s ease;
 }
 
 .slider-navBtn button {
   margin: 20px;
-  color: #c78500;
+  color: #3085C3;
   background-color: transparent; /* Optional: Remove button background */
   border: none; /* Optional: Remove button border */
   font-size: 24px; /* Adjust icon size */

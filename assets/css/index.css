@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #ced3e6;
+  background: #EEF1FF;
 }
 p {
   color: #8f8f8f;
@@ -26,7 +26,7 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #ced3e6;
+  background-color:#D2DAFF;
   /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
@@ -55,7 +55,7 @@ nav img {
 }
 .nav-logo span {
   font-weight: 700;
-  color: #c88500;
+  color: #3F72AF;
 }
 .nav-links {
   flex: 1;
@@ -76,7 +76,7 @@ nav img {
   content: "";
   width: 0%;
   height: 2px;
-  background: #c88500;
+  background: #000000;
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -98,7 +98,7 @@ nav .fa {
   }
   .nav-links {
     position: absolute;
-    background: #f44336;
+    background: #6499E9;
     height: 100vh;
     width: 200px;
     top: -1000px;
@@ -146,7 +146,7 @@ nav .fa {
 
 .hero h1 span {
   font-weight: 800;
-  color: #c88500;
+  color:#3F72AF;
 }
 .hero p {
   font-size: 20px;
@@ -220,7 +220,7 @@ nav .fa {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #282936;
+  color: #222831;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -285,7 +285,7 @@ nav .fa {
   width: 80%;
   margin: auto;
   text-align: center;
-  background-color: #0875f7;
+  background-color: #000000;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -327,7 +327,7 @@ nav .fa {
   }
   .why-us-col {
     width: 80%;
-    background-color: #0875f7;
+    background-color: #000000;
     margin: 20px 10px;
     justify-content: left;
   }
@@ -356,7 +356,7 @@ nav .fa {
 .section-btn {
   width: 130px;
   height: 40px;
-  background: #ff7426;
+  background:#B1B2FF;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -451,7 +451,7 @@ nav .fa {
 
 .learning-info h1 span {
   font-weight: 800;
-  color: #c88500;
+  color:#3F72AF;
 }
 
 .text-box-desc {
@@ -530,7 +530,7 @@ nav .fa {
   flex-basis: 44%;
   border-radius: 10px;
   text-align: left;
-  background: #fff3f3;
+  background: #EEF1FF;
   padding: 25px;
   cursor: pointer;
   flex-direction: column;
@@ -651,10 +651,10 @@ nav .fa {
   width: 60px;
 }
 
-.staff-col .staff-job h4 {
+.staff-job h4 {
   margin: 0;
   text-align: left;
-  color: #ff7426;
+  color:#0875f7;
 }
 
 @media (max-width: 768px) {
@@ -778,14 +778,14 @@ nav .fa {
   margin: 1px;
   padding: 0 20px;
   cursor: pointer;
-  background: #000000;
+  background: #A6E3E9;
   color: #ffffff;
   transition: width 0.35s ease-in-out, background 0.35s ease-in-out;
 }
 
 .news-letter .subscription.done .submit-email {
   width: calc(100% - 2px);
-  background: #c88500;
+  background:#B1B2FF;
 }
 
 .news-letter .subscription .submit-email .before-submit,
@@ -833,9 +833,9 @@ nav .fa {
   width: 100%;
   height: fit-content;
   /* color: #606060; */
-  background-color: #ffffff8f;
+  background-color: #AAC4FF;
   padding: 15px 0;
-  border-top: 1px solid #000;
+  border-top: 1px solid #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -870,7 +870,7 @@ nav .fa {
 
 .footer h4 span {
   font-weight: 768;
-  color: #c88500;
+  color:#3F72AF;
 }
 
 .footer ul {
