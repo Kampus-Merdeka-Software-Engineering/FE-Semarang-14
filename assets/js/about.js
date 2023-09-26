@@ -46,22 +46,22 @@ function handleScreenWidth() {
     
         function showCards() {
             cards.forEach((card, index) => {
-            card.style.display = "none";
-            const adjustedIndex =
-                (index + cards.length - currentIndex) % cards.length;
-            if (adjustedIndex >= 0 && adjustedIndex < cardsPerPage) {
-                card.style.display = "block";
-            }
+                card.style.display = "none";
+                const adjustedIndex =
+                    (index + cards.length - currentIndex) % cards.length;
+                if (adjustedIndex >= 0 && adjustedIndex < cardsPerPage) {
+                    card.style.display = "block";
+                }
             });
         }
     
         function goToNextPage() {
-            currentIndex = (currentIndex + 1) % cards.length;
+            currentIndex = (currentIndex + 3) % cards.length;
             showCards();
         }
     
         function goToPrevPage() {
-            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            currentIndex = (currentIndex - 3 + cards.length) % cards.length;
             showCards();
         }
     
