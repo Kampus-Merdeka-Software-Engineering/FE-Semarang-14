@@ -90,7 +90,7 @@ nav .fa {
     background: #6499E9;
     height: 100vh;
     width: 200px;
-    top: -1000px;
+    top: -1500px;
     right: 0px;
     text-align: left;
     z-index: 2;
@@ -169,8 +169,20 @@ nav .fa {
   line-height: 0;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 10px 10px 0;
+  margin: 0 10px 0 0;
   font-size: 18px;
+  align-items: center;
+}
+
+.course-title h3 {
+  text-align: left;
+  font-weight: 600;
+  margin: 0 0 0 0;
+  line-height: normal;
+}
+
+.course-title {
+  text-align: center;
 }
 
 .course-price {
@@ -199,11 +211,6 @@ nav .fa {
   justify-content: center;
   line-height: 40px;
   transition: background 0.5s ease, color 0.5s ease;
-}
-.course h3 {
-  text-align: center;
-  font-weight: 600;
-  margin: 10px 0;
 }
 
 .course-btn a {
