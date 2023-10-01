@@ -831,22 +831,20 @@ nav .fa {
     margin: auto;
   }
 }
-
 /* footer */
-
+/* Footer Container */
 .footer {
-  width: 100%;
   height: fit-content;
-  /* color: #606060; */
   background-color: #AAC4FF;
   padding: 15px 0;
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid #000;
+  align-items: center;
 }
 
+/* Footer Rows */
 .footer-row {
   text-align: left;
   width: 80%;
@@ -854,14 +852,18 @@ nav .fa {
   display: flex;
   justify-content: space-between;
   flex-basis: calc(33% - 20px);
+  margin-top: 3%;
+  flex-wrap: wrap;
 }
 
+/* Footer Links Section */
 .footer-links {
   width: 20%;
   display: flex;
   flex-direction: column;
 }
 
+/* Header Inside Footer */
 .footer h4 {
   color: #000;
   font-size: 18px;
@@ -875,9 +877,15 @@ nav .fa {
 
 .footer h4 span {
   font-weight: 768;
-  color:#3F72AF;
+  color: #3F72AF;
 }
 
+/* Section Text Alignment */
+.section-text {
+  text-align: justify;
+}
+
+/* Footer List Styles */
 .footer ul {
   list-style: none;
   padding: 0;
@@ -887,30 +895,56 @@ nav .fa {
   margin-bottom: 10px;
 }
 
+/* Footer Links */
 .footer a {
   color: #606060;
   text-decoration: none;
 }
 
+/* Location Text */
+.location-text {
+  width: 100%;
+  float: left;
+}
+
+.location-text ul {
+  margin: 0;
+  padding: 0;
+}
+
+.location-text li {
+  font-size: 14px;
+  color: #606060;
+  padding: 0 0 5px 0;
+}
+
+.location-text li a {
+  color: #606060;
+}
+
+.location-text li a:hover {
+  color: #606060;
+}
+
+/* Additional Styling */
+.padding_left_10 {
+  padding-left: 10px;
+}
+
+/* Copyright Text */
 .footer .copyright {
   text-align: center;
   margin: 0 auto;
   font-size: 14px;
 }
 
+/* Footer Info */
 .footer .footer-info {
   font-size: 16px;
 }
 
 .footer .footer-info strong {
   color: #606060;
-}
-
-.footer-row {
-  margin-top: 3%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
