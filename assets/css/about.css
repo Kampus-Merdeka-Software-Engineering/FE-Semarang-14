@@ -358,7 +358,7 @@ nav .fa {
     width: 50%;
     flex-wrap: wrap;
     margin: 0 auto;
-    padding: auto;
+    padding: 0 auto;
   }
 }
 

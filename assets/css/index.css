@@ -576,116 +576,118 @@ nav .fa {
   }
 }
 
-/*Staff*/
-.staff {
-  width: 80%;
-  margin: 10px auto;
+/* INSTRUCTOR STYLES */
+.instructor {
+  padding: 20px; /* Update with your desired padding */
+}
+
+.instructor .section-subtitle {
   text-align: center;
+  margin-bottom: 15px;
 }
 
-.staff-row {
-  margin-top: 3%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.instructor .section-title {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.staff-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #fff3f3;
-  border-radius: 10px;
-  margin-bottom: 5%;
-  padding: 20px 20px;
-  box-sizing: border-box;
-  transition: 0.5s;
-  margin: 10px;
-  flex-basis: calc(33.33% - 20px);
+.instructor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Adjust as needed */
+  gap: 30px;
+  padding: 0 15px;
+}
+
+.instructor-card {
+  background: #f7f7f7; /* Update with your desired background color */
+  padding: 20px;
+  padding-bottom: 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
   position: relative;
 }
 
-.staff-col img {
+.instructor-card:hover {
+  background: #ffffff; /* Update with your desired hover background color */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px); /* Add hover effect */
+}
+
+.instructor-img-box {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.instructor-img-box img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--default-transition);
 }
 
-.staff-col .staff-profile {
+.instructor-card:hover .instructor-img-box img {
+  transform: scale(1.1); /* Add hover effect */
+}
+
+.instructor-card .social-link {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  flex: 0 0 auto;
-  margin-top: 15px;
-}
-
-.staff-col .staff-profile h4 {
-  margin: 0;
-  text-align: left;
-  color: #868686;
-  font-size: smaller;
-}
-
-.staff-col .staff-profile h3 {
-  margin: 0;
-  text-align: left;
-  margin-bottom: 2px;
-}
-
-.staff-col p {
-  text-align: justify;
-  margin-top: 10px;
-}
-
-.staff-job {
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  align-content: center;
-  margin-top: 10px;
-  flex: 0 0 auto;
+  gap: 20px;
+  transition: var(--default-transition);
 }
 
-.staff-job-social {
+.instructor-card .social-link a {
+  background: var(--ultramarine-blue);
+  color: var(--white);
+  width: 35px;
+  height: 35px;
   display: flex;
-  justify-content: space-between;
-  width: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: var(--default-transition);
 }
 
-.staff-job h4 {
-  margin: 0;
-  text-align: left;
-  color:#0875f7;
+.instructor-card .social-link a:hover {
+  background: var(--red-orange-color-wheel);
 }
+
+
+.instructor-card:hover .social-link {
+  bottom: 20px;
+}
+
+.instructor-name {
+  color: #333; /* Update with your desired text color */
+  font-size: 18px; /* Update with your desired font size */
+  font-weight: bold; /* Update with your desired font weight */
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.instructor-card:hover .instructor-name {
+  color: #ff5733; /* Update with your desired hover text color */
+}
+
+.instructor-title {
+  color: #007bff; /* Update with your desired title text color */
+  font-family: 'Montserrat', sans-serif; /* Update with your desired font family */
+  font-size: 16px; /* Update with your desired font size */
+}
+
+/* Media query for smaller screens */
 
 @media (max-width: 768px) {
-  .staff {
-    width: 80%;
-    margin: 10px auto;
-    text-align: center;
-  }
-
-  .staff-row {
-    margin-top: 3%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .staff-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #fff3f3;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 20px 20px;
-    box-sizing: border-box;
-    transition: 0.5s;
-    margin: 10px;
-    flex-basis: calc(80% - 20px);
-    position: relative;
-    border: 2px solid #000;
+  .instructor-grid {
+      grid-template-columns: repeat(2, 1fr); /* Adjust as needed for smaller screens */
   }
 }
 
