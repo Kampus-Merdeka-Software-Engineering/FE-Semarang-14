@@ -660,7 +660,7 @@ nav .fa {
 }
 
 .instructor-card .social-link a:hover {
-  background: #FFB703;
+  background: #222831;
 }
 
 .instructor-card:hover .social-link {
@@ -676,11 +676,11 @@ nav .fa {
 }
 
 .instructor-card:hover .instructor-name {
-  color: #FFB703;
+  color: #3F72AF;
 }
 
 .instructor-title {
-  color: #0062ff;
+  color: #AAC4FF;
   font-family: 'Montserrat', sans-serif;
   font-size: 600;
 }
@@ -711,7 +711,7 @@ nav .fa {
 }
 
 .social-link a:hover {
-  background: #FFB703;
+  background: #222831;
 }
 
 .social-link ion-icon {
