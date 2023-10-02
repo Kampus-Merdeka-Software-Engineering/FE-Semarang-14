@@ -134,7 +134,7 @@ nav .fa {
 
 .hero .text-box {
   width: 50%;
-  color: var(--Primary-Black, #050c26);
+  color: #050c26;
 }
 
 .hero h1 {
@@ -439,7 +439,7 @@ nav .fa {
 
 .learning-info .text-box {
   width: 50%;
-  color: var(--Primary-Black, #050c26);
+  color: #050c26;
 }
 
 .learning-info h1 {
@@ -578,7 +578,11 @@ nav .fa {
 
 /* INSTRUCTOR STYLES */
 .instructor {
-  padding: 20px; /* Update with your desired padding */
+  padding: 15px, 80px; /* Update with your desired padding */
+  width: 80%;
+  padding-top: 20px;
+  text-align: center;
+  margin: auto;
 }
 
 .instructor .section-subtitle {
@@ -599,37 +603,35 @@ nav .fa {
 }
 
 .instructor-card {
-  background: #f7f7f7; /* Update with your desired background color */
+  background: #f5f7fa;
   padding: 20px;
   padding-bottom: 30px;
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-  position: relative;
+  transition: 0.25s ease;
 }
 
 .instructor-card:hover {
-  background: #ffffff; /* Update with your desired hover background color */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transform: translateY(-10px); /* Add hover effect */
+  background: #fff;
+  box-shadow: 0 10px 30px #0000001a;
 }
 
 .instructor-img-box {
+  position: relative;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 30px;
-  position: relative;
 }
 
 .instructor-img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--default-transition);
+  transition: 0.25s ease;
 }
 
 .instructor-card:hover .instructor-img-box img {
-  transform: scale(1.1); /* Add hover effect */
+  transform: scale(1.1);
 }
 
 .instructor-card .social-link {
@@ -641,46 +643,46 @@ nav .fa {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  transition: var(--default-transition);
+  transition: 0.25s ease;
 }
 
 .instructor-card .social-link a {
-  background: var(--ultramarine-blue);
-  color: var(--white);
+  background: #0062ff;
+  color: #fff;
   width: 35px;
   height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  transition: var(--default-transition);
+  transition: 0.25s ease;
+  text-decoration: none;
 }
 
 .instructor-card .social-link a:hover {
-  background: var(--red-orange-color-wheel);
+  background: #FFB703;
 }
-
 
 .instructor-card:hover .social-link {
   bottom: 20px;
 }
 
 .instructor-name {
-  color: #333; /* Update with your desired text color */
-  font-size: 18px; /* Update with your desired font size */
-  font-weight: bold; /* Update with your desired font weight */
+  color: #050e38;
+  font-size: 22px;
+  font-weight: 700;
   margin-bottom: 10px;
-  transition: color 0.3s;
+  transition: 0.25s ease;
 }
 
 .instructor-card:hover .instructor-name {
-  color: #ff5733; /* Update with your desired hover text color */
+  color: #FFB703;
 }
 
 .instructor-title {
-  color: #007bff; /* Update with your desired title text color */
-  font-family: 'Montserrat', sans-serif; /* Update with your desired font family */
-  font-size: 16px; /* Update with your desired font size */
+  color: #0062ff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 600;
 }
 
 /* Media query for smaller screens */
@@ -689,6 +691,32 @@ nav .fa {
   .instructor-grid {
       grid-template-columns: repeat(2, 1fr); /* Adjust as needed for smaller screens */
   }
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-link a {
+  background: #ffffff1a;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: 0.25s ease;
+}
+
+.social-link a:hover {
+  background: #FFB703;
+}
+
+.social-link ion-icon {
+  font-size: 20px;
+  color: #fff;
 }
 
 /* call to action */
