@@ -861,6 +861,7 @@ nav .fa {
     margin: auto;
   }
 }
+
 /* footer */
 /* Footer Container */
 .footer {
@@ -877,7 +878,7 @@ nav .fa {
 /* Footer Rows */
 .footer-row {
   text-align: left;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -891,6 +892,7 @@ nav .fa {
   width: 20%;
   display: flex;
   flex-direction: column;
+  padding: 0 5%;
 }
 
 /* Header Inside Footer */
@@ -913,6 +915,7 @@ nav .fa {
 /* Section Text Alignment */
 .section-text {
   text-align: justify;
+  color: #606060;
 }
 
 /* Footer List Styles */
@@ -932,27 +935,27 @@ nav .fa {
 }
 
 /* Location Text */
-.location-text {
+.footer-list {
   width: 100%;
   float: left;
 }
 
-.location-text ul {
+.footer-list ul {
   margin: 0;
   padding: 0;
 }
 
-.location-text li {
+.footer-list li {
   font-size: 14px;
   color: #606060;
   padding: 0 0 5px 0;
 }
 
-.location-text li a {
+.footer-list li a {
   color: #606060;
 }
 
-.location-text li a:hover {
+.footer-list li a:hover {
   color: #606060;
 }
 
@@ -978,11 +981,20 @@ nav .fa {
 }
 
 @media (max-width: 768px) {
+  .footer-row {
+    width: 100%;
+    flex-direction: column;
+  }
+
   .footer-links {
-    width: 50%;
+    width: 70%;
     flex-wrap: wrap;
     margin: 0 auto;
     padding: auto;
+  }
+
+  .footer .copyright {
+    margin: 20px auto 0;
   }
 }
 
