@@ -1,5 +1,6 @@
 // Ajax Handling
-const BASE_URL = "http://localhost:3000/api";
+// const BASE_URL = "http://localhost:3000/api"; // Localhost
+const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
 
 // Show Courses on Page Load
 // Create number formatter.
@@ -17,9 +18,8 @@ window.onload = async () => {
         },
     }).then((response) => {
         response.json().then((data) => {
-            // console.log(data);
             let courses = data.data;
-            console.log(courses);
+            // console.log(courses);
 
             var template = courses.map((course) => {
                 return `
@@ -62,14 +62,8 @@ window.onload = async () => {
 // Modal Handling
 var modal = document.getElementById("myModal");
 
-function showModal() {
-    modal.style.display = "block";
-}
-
-// show modal by id
 function showModal(id) {
     modal.style.display = "block";
-    console.log(id);
 
     fetch(`${BASE_URL}/courses/${id}`, {
         method: "GET",
@@ -78,7 +72,7 @@ function showModal(id) {
         },
     }).then((response) => {
         response.json().then((data) => {
-            let course = data;
+            let course = data.data;
             // console.log(course);
 
             var modalTemplate = `
@@ -112,21 +106,27 @@ function showModal(id) {
                         <form id="contactForm">
 
                             <div class="form-label">
+                                <label for="course">Course <span>:</span></label>
+                                <input type="text" id="course" name="course" value="${course.nama}" readonly>
+                                <input type="hidden" id="id_course" name="id_course" value="${course.id}" readonly>
+                            </div>
+
+                            <div class="form-label">
                                 <label for="name">Name <span>:</span></label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" >
                             </div>
 
                             <div class="form-label">
                                 <label for="email">Email <span>:</span></label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" >
                             </div>
 
                             <div class="form-label">
                                 <label for="phone">Phone Number <span>:</span></label>
-                                <input type="tel" id="phone" name="phone" required>
+                                <input type="tel" id="phone" name="phone" >
                             </div>
 
-                            <button type="submit">Send <i class="fa-solid fa-arrow-right"></i></button>
+                            <button type="submit" id="submit">Send <i class="fa-solid fa-arrow-right"></i></button>
                         </form>
                     </div>
                 </div>
@@ -141,8 +141,72 @@ function showModal(id) {
     });
 }
 
+// Form Handling
+const contactForm = document.getElementById("contactForm");
+
+const submit = document.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const id_course = document.getElementById("id_course").value;
+    const nama = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const no_hp = document.getElementById("phone").value;
+
+    // validate form with regex
+    const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9]{10,12}$/;
+
+    if (!nama || !email || !no_hp) {
+        alert("Please fill the form!");
+        return;
+    } else if (!nameRegex.test(nama)) {
+        alert("Please enter a valid name!");
+        return;
+    } else if (!emailRegex.test(email)) {
+        alert("Please enter a valid email!");
+        return;
+    } else if (!phoneRegex.test(no_hp)) {
+        alert("Please enter a valid phone number!");
+        return;
+    }
+
+    const data = {
+        id_course,
+        nama,
+        email,
+        no_hp,
+    };
+
+    fetch(`${BASE_URL}/peserta`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    }).then((response) => {
+        response.json().then((data) => {
+            // console.log(data);
+            alert("Success!");
+            closeModal();
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
+});
+
+// Close Modal
 function closeModal() {
     modal.style.display = "none";
+
+    // clear form
+    contactForm.reset();
+
+    // clear modal
+    modal.innerHTML = "";
+
+    // refresh page
+    window.location.reload();
 }
 
 window.onclick = function (event) {
