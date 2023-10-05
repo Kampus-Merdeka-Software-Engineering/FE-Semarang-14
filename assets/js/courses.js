@@ -1,6 +1,6 @@
 // Ajax Handling
-const BASE_URL = "http://localhost:3000/api"; // Localhost
-// const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
+// const BASE_URL = "http://localhost:3000/api"; // Localhost
+const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
 
 // Show Courses on Page Load
 // Create number formatter.
