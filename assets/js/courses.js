@@ -1,10 +1,10 @@
 // Ajax Handling
-// const BASE_URL = "http://localhost:3000/api"; // Localhost
-const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
+const BASE_URL = "http://localhost:3000/api"; // Localhost
+// const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
 
 // Show Courses on Page Load
 // Create number formatter.
-const NumFormatter = new Intl.NumberFormat('en-US', {
+const NumFormatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
   });
@@ -38,7 +38,7 @@ window.onload = async () => {
                             <h3>${course.rating}/10</h3>
                         </div>
                         <div class="course-price">
-                            <h4>Rp ${NumFormatter.format(course.harga)}</h4>
+                            <h4>${NumFormatter.format(course.harga)}</h4>
                         </div>
                         <div class="course-text">
                             <p>${course.deskripsi_singkat}</p>

@@ -1,9 +1,9 @@
 // Ajax Handling
-// const BASE_URL = "http://localhost:3000/api"; // Localhost
-const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
+const BASE_URL = "http://localhost:3000/api"; // Localhost
+// const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
 
 // Create number formatter.
-const NumFormatter = new Intl.NumberFormat('en-US', {
+const NumFormatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
   });
