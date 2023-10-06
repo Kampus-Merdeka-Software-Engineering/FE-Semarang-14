@@ -59,6 +59,45 @@ window.onload = async () => {
     });
 
 };
+ 
+const Subscribe = document.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("add-email").value;
+
+    // validate form with regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if ( !email  ) {
+        alert("Please fill the form!");
+        return;
+    }  else if (!emailRegex.test(email)) {
+        alert("Please enter a valid email!");
+        return;
+    } 
+    
+
+    const data = {
+        email,
+    };
+
+    console.log(data);
+
+    fetch(`${BASE_URL}/subcription`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    }).then((response) => {
+        response.json().then((data) => {
+            // console.log(data);
+            alert("Success!");
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
+});
 
 // Modal handling
 var modal = document.getElementById("myModal");
