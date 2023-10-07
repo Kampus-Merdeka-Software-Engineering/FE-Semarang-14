@@ -322,7 +322,6 @@ const Subscribe = document.addEventListener("submit", async (e) => {
         console.log(error);
     });
 });
-<<<<<<< HEAD
 
 // Testimonial Handling
 const testimoniList = document.getElementById("testimonial-list");
@@ -365,5 +364,3 @@ window.onload = async () => {
         console.log(error);
     });
 };
-=======
->>>>>>> 4f1157560d029982a68e330bd64476fbbb6e5153
