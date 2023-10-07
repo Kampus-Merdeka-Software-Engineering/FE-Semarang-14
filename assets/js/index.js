@@ -318,3 +318,45 @@ const Subscribe = document.addEventListener("submit", async (e) => {
         console.log(error);
     });
 });
+
+// Testimonial Handling
+const testimoniList = document.getElementById("testimonial-list");
+window.onload = async () => {
+    fetch(`${BASE_URL}/testimonial`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }).then((response) => {
+        response.json().then((data) => {
+            let testimonials = data.data;
+            
+            var current = testimonials.map((testimonial) => {
+                return `
+                <div class="testimonial-row">
+                <div class="testimonial-col">
+                  <div class="testimonial-text">
+                    <p>${testimonial.testimoni}</p>
+                  </div>
+                  <div class="profile-section">
+                    <div class="profile">
+                      <img src="./assets/images/${testimonial.pesertaDetails.photo}" alt="" />
+                      <h3>${testimonial.pesertaDetails.nama}</h3>
+                    </div>
+                    <div class="testimonial-star">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                `;
+            });
+            testimoniList.innerHTML = current.join("");
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
+};
