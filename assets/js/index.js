@@ -6,27 +6,11 @@ const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Prod
 const NumFormatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
-  });
-
-// Subscriptions handling
-var email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-var submit = document.querySelector(".submit-email");
-var input = document.querySelector(".add-email");
-var subscription = document.querySelector(".subscription");
-
-submit.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    if (!email.test(input.value)) {
-        subscription.classList.add("error");
-    } else {
-        subscription.classList.add("done");
-        subscription.classList.remove("error");
-    }
 });
 
-// Best Courses handling
-var bestCourse = document.getElementById("best-course");
 window.onload = async () => {
+    // Best Courses handling
+    var bestCourse = document.getElementById("best-course");
     fetch(`${BASE_URL}/best_courses`, {
         method: "GET",
         headers: {
@@ -58,46 +42,68 @@ window.onload = async () => {
         console.log(error);
     });
 
-};
- 
-const Subscribe = document.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const email = document.getElementById("add-email").value;
-
-    // validate form with regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if ( !email  ) {
-        alert("Please fill the form!");
-        return;
-    }  else if (!emailRegex.test(email)) {
-        alert("Please enter a valid email!");
-        return;
-    } 
-    
-
-    const data = {
-        email,
-    };
-
-    console.log(data);
-
-    fetch(`${BASE_URL}/subcription`, {
-        method: "POST",
+    // Testimonials handling
+    var Testimonials = document.getElementById("testimonial-list");
+    fetch(`${BASE_URL}/testimonial`, {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
     }).then((response) => {
         response.json().then((data) => {
-            // console.log(data);
-            alert("Success!");
+            let testimonials = data.data;
+            // console.log(testimonials);
+
+            for (let i = 0; i < testimonials.length; i++) {
+                let testimonial = testimonials[i];
+                // console.log(testimonial);
+
+                fetch(`${BASE_URL}/peserta/${testimonial.id_peserta}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }).then((response) => {
+                    response.json().then((data) => {
+                        let peserta = data.data;
+                        console.log(peserta);
+
+                        var template = `
+                        <div class="testimonial-col">
+                            <div class="testimonial-text">
+                                <p>
+                                    ${testimonial.testimoni}
+                                </p>
+                            </div>
+                            <div class="profile-section">
+                                <div class="profile">
+                                    <img src="./assets/images/${peserta.photo}" alt="" />
+                                    <h3>${peserta.nama}</h3>
+                                </div>
+                                <div class="testimonial-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>s
+                            </div>
+                        </div>
+                        `;
+
+                        // console.log(template);
+                        Testimonials.innerHTML += template;
+                    });
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
         });
     }).catch((error) => {
         console.log(error);
     });
-});
+};
+
 
 // Modal handling
 var modal = document.getElementById("myModal");
@@ -242,7 +248,9 @@ function closeModal() {
     modal.style.display = "none";
 
     // clear form
-    contactForm.reset();
+    if (contactForm){
+        contactForm.reset();
+    }
 
     // clear modal
     modal.innerHTML = "";
@@ -257,21 +265,56 @@ window.onclick = function (event) {
     }
 };
 
-// var btn = document.getElementById("myBtn");
-// var span = document.getElementsByClassName("close")[0];
+// Subscriptions handling
+var email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+var submit = document.querySelector(".submit-email");
+var input = document.querySelector(".add-email");
+var subscription = document.querySelector(".subscription");
 
-// document.addEventListener("click", function (event) {
-//     if (event.target.classList.contains("myBtn")) {
-//     modal.style.display = "block";
-//     }
-// });
+submit.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    if (!email.test(input.value)) {
+        subscription.classList.add("error");
+    } else {
+        subscription.classList.add("done");
+        subscription.classList.remove("error");
+    }
+});
 
-// span.onclick = function () {
-//     modal.style.display = "none";
-// };
+const Subscribe = document.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-// window.onclick = function (event) {
-//     if (event.target == modal) {
-//     modal.style.display = "block";
-//     }
-// };
+    const email = document.getElementById("add-email").value;
+
+    // validate form with regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if ( !email  ) {
+        alert("Please fill the form!");
+        return;
+    }  else if (!emailRegex.test(email)) {
+        alert("Please enter a valid email!");
+        return;
+    } 
+    
+    const data = {
+        email,
+    };
+
+    console.log(data);
+
+    fetch(`${BASE_URL}/subcription`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    }).then((response) => {
+        response.json().then((data) => {
+            // console.log(data);
+            alert("Success!");
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
+});
