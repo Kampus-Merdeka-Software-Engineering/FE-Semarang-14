@@ -42,7 +42,7 @@ window.onload = async () => {
     });
 
     // Testimonials handling
-    var Testimonials = document.getElementById("testimonial-list");
+    var testimoniList = document.getElementById("testimonial-list");
 
     function generateStarRating(rating) {
         var stars = '';
@@ -63,47 +63,29 @@ window.onload = async () => {
     }).then((response) => {
         response.json().then((data) => {
             let testimonials = data.data;
-            // console.log(testimonials);
-
-            for (let i = 0; i < testimonials.length; i++) {
-                let testimonial = testimonials[i];
-                // console.log(testimonial);
-
-                fetch(`${BASE_URL}/peserta/${testimonial.id_peserta}`, {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }).then((response) => {
-                    response.json().then((data) => {
-                        let peserta = data.data;
-
-                        var template = `
-                        <div class="testimonial-col">
-                            <div class="testimonial-text">
-                                <p>
-                                    "${testimonial.testimoni}"
-                                </p>
-                            </div>
-                            <div class="profile-section">
-                                <div class="profile">
-                                    <img src="./assets/images/${peserta.photo}" alt="" />
-                                    <h3>${peserta.nama}</h3>
-                                </div>
-                                <div class="testimonial-star">
-                                    "${generateStarRating(testimonial.rating)}"
-                                </div>
-                            </div>
+            
+            var current = testimonials.map((testimonial) => {
+                return `
+                <div class="testimonial-col">
+                    <div class="testimonial-text">
+                        <p>
+                            "${testimonial.testimoni}"
+                        </p>
+                    </div>
+                    <div class="profile-section">
+                        <div class="profile">
+                            <img src="./assets/images/${testimonial.pesertaDetails.photo}" alt="" />
+                            <h3>${testimonial.pesertaDetails.nama}</h3>
                         </div>
-                        `;
+                        <div class="testimonial-star">
+                            "${generateStarRating(testimonial.rating)}"
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
 
-                        // console.log(template);
-                        Testimonials.innerHTML += template;
-                    });
-                }).catch((error) => {
-                    console.log(error);
-                });
-            }
+            testimoniList.innerHTML = current.join("");
         });
     }).catch((error) => {
         console.log(error);
@@ -286,13 +268,12 @@ submit.addEventListener("mousedown", (e) => {
 });
 
 const Subscribe = document.addEventListener("submit", async (e) => {
+    
     e.preventDefault();
-
     const email = document.getElementById("add-email").value;
 
     // validate form with regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if ( !email  ) {
         alert("Please fill the form!");
         return;
@@ -301,11 +282,7 @@ const Subscribe = document.addEventListener("submit", async (e) => {
         return;
     } 
     
-    const data = {
-        email,
-    };
-
-    console.log(data);
+    const data = { email };
 
     fetch(`${BASE_URL}/subcription`, {
         method: "POST",
@@ -322,45 +299,3 @@ const Subscribe = document.addEventListener("submit", async (e) => {
         console.log(error);
     });
 });
-
-// Testimonial Handling
-const testimoniList = document.getElementById("testimonial-list");
-window.onload = async () => {
-    fetch(`${BASE_URL}/testimonial`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    }).then((response) => {
-        response.json().then((data) => {
-            let testimonials = data.data;
-            
-            var current = testimonials.map((testimonial) => {
-                return `
-                <div class="testimonial-row">
-                <div class="testimonial-col">
-                  <div class="testimonial-text">
-                    <p>${testimonial.testimoni}</p>
-                  </div>
-                  <div class="profile-section">
-                    <div class="profile">
-                      <img src="./assets/images/${testimonial.pesertaDetails.photo}" alt="" />
-                      <h3>${testimonial.pesertaDetails.nama}</h3>
-                    </div>
-                    <div class="testimonial-star">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-regular fa-star"></i>
-                    </div>
-                  </div>
-                </div>
-                `;
-            });
-            testimoniList.innerHTML = current.join("");
-        });
-    }).catch((error) => {
-        console.log(error);
-    });
-};
