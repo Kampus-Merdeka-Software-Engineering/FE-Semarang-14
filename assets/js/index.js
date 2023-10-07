@@ -19,7 +19,6 @@ window.onload = async () => {
     }).then((response) => {
         response.json().then((data) => {
             let best_courses = data.data;
-            console.log(best_courses);
 
             var template = best_courses.map((course) => {
                 return `
@@ -44,6 +43,18 @@ window.onload = async () => {
 
     // Testimonials handling
     var Testimonials = document.getElementById("testimonial-list");
+
+    function generateStarRating(rating) {
+        var stars = '';
+        for (var i = rating; i > 0; i--) {
+            stars += '<i class="fa-solid fa-star"></i>';
+        }
+        for (var j = 5 - rating; j > 0; j--) {
+            stars += '<i class="fa-regular fa-star"></i>';
+        }
+        return stars;
+    }
+    
     fetch(`${BASE_URL}/testimonial`, {
         method: "GET",
         headers: {
@@ -66,13 +77,12 @@ window.onload = async () => {
                 }).then((response) => {
                     response.json().then((data) => {
                         let peserta = data.data;
-                        console.log(peserta);
 
                         var template = `
                         <div class="testimonial-col">
                             <div class="testimonial-text">
                                 <p>
-                                    ${testimonial.testimoni}
+                                    "${testimonial.testimoni}"
                                 </p>
                             </div>
                             <div class="profile-section">
@@ -81,12 +91,8 @@ window.onload = async () => {
                                     <h3>${peserta.nama}</h3>
                                 </div>
                                 <div class="testimonial-star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>s
+                                    "${generateStarRating(testimonial.rating)}"
+                                </div>
                             </div>
                         </div>
                         `;
@@ -223,8 +229,6 @@ const submitForm = document.addEventListener("submit", async (e) => {
         email,
         no_hp,
     };
-
-    console.log(data);
 
     fetch(`${BASE_URL}/peserta`, {
         method: "POST",
