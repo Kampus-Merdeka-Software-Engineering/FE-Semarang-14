@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #EEF1FF;
+  background: #eef1ff;
 }
 p {
   color: #8f8f8f;
@@ -26,7 +26,7 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  background-color:#D2DAFF;
+  background-color: #d2daff;
   /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
@@ -55,7 +55,7 @@ nav img {
 }
 .nav-logo span {
   font-weight: 700;
-  color: #3F72AF;
+  color: #3f72af;
 }
 .nav-links {
   flex: 1;
@@ -98,7 +98,7 @@ nav .fa {
   }
   .nav-links {
     position: absolute;
-    background: #6499E9;
+    background: #6499e9;
     height: 100vh;
     width: 200px;
     top: -1500px;
@@ -146,7 +146,7 @@ nav .fa {
 
 .hero h1 span {
   font-weight: 800;
-  color:#3F72AF;
+  color: #3f72af;
 }
 .hero p {
   font-size: 20px;
@@ -356,7 +356,7 @@ nav .fa {
 .section-btn {
   width: 130px;
   height: 40px;
-  background:#B1B2FF;
+  background: #b1b2ff;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -451,7 +451,7 @@ nav .fa {
 
 .learning-info h1 span {
   font-weight: 800;
-  color:#3F72AF;
+  color: #3f72af;
 }
 
 .text-box-desc {
@@ -501,12 +501,23 @@ nav .fa {
   text-align: center;
 }
 
+.testimonial-container {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 100%;
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
 .testimonial-row {
   margin-top: 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
+  align-items: center;
 }
 
 .testimonial-text {
@@ -530,7 +541,7 @@ nav .fa {
   flex-basis: 44%;
   border-radius: 10px;
   text-align: left;
-  background: #EEF1FF;
+  background: #eef1ff;
   padding: 25px;
   cursor: pointer;
   flex-direction: column;
@@ -572,6 +583,15 @@ nav .fa {
   }
 
   .testimonial-col {
+    width: 80%;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .testimonial-row {
     width: 100%;
   }
 }
@@ -676,12 +696,12 @@ nav .fa {
 }
 
 .instructor-card:hover .instructor-name {
-  color: #3F72AF;
+  color: #3f72af;
 }
 
 .instructor-title {
-  color: #AAC4FF;
-  font-family: 'Montserrat', sans-serif;
+  color: #aac4ff;
+  font-family: "Montserrat", sans-serif;
   font-size: 600;
 }
 
@@ -689,7 +709,23 @@ nav .fa {
 
 @media (max-width: 768px) {
   .instructor-grid {
-      grid-template-columns: repeat(2, 1fr); /* Adjust as needed for smaller screens */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Adjust as needed for smaller screens */
+  }
+}
+
+@media (max-width: 568px) {
+  .instructor-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Adjust as needed for smaller screens */
+  }
+  .instructor-card .social-link a {
+    width: 40%;
+    height: auto;
   }
 }
 
@@ -808,14 +844,14 @@ nav .fa {
   margin: 1px;
   padding: 0 20px;
   cursor: pointer;
-  background:#B1B2FF;
+  background: #b1b2ff;
   color: #ffffff;
   transition: width 0.35s ease-in-out, background 0.35s ease-in-out;
 }
 
 .news-letter .subscription.done .submit-email {
   width: calc(100% - 2px);
-  background:#B1B2FF;
+  background: #b1b2ff;
 }
 
 /* subscription error */
@@ -866,7 +902,7 @@ nav .fa {
 /* Footer Container */
 .footer {
   height: fit-content;
-  background-color: #AAC4FF;
+  background-color: #aac4ff;
   padding: 15px 0;
   border-top: 1px solid #000;
   display: flex;
@@ -909,7 +945,7 @@ nav .fa {
 
 .footer h4 span {
   font-weight: 768;
-  color: #3F72AF;
+  color: #3f72af;
 }
 
 /* Section Text Alignment */
@@ -1054,7 +1090,7 @@ nav .fa {
 }
 
 .modal-content form {
-  background-color: #EEF1FF;
+  background-color: #eef1ff;
   border-radius: 30px;
   padding: 20px;
   display: flex;
@@ -1062,7 +1098,7 @@ nav .fa {
 }
 
 .modal-content h2 {
-  color: #D2DAFF;
+  color: #d2daff;
   margin-left: 10px;
 }
 
@@ -1095,12 +1131,12 @@ nav .fa {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #e4d192;
-  background-color: #FFF3DA;
+  background-color: #fff3da;
   border-radius: 20px;
 }
 
 .modal-content button {
-  background-color: #FFDEB4;
+  background-color: #ffdeb4;
   color: #000000;
   border: none;
   padding: 5px 20px;
@@ -1219,13 +1255,13 @@ nav .fa {
   margin: 10px;
   display: flex;
   justify-content: center;
-  color: #5CD2E6;
+  color: #5cd2e6;
   transition: color 0.3s ease;
 }
 
 .slider-navBtn button {
   margin: 20px;
-  color: #3085C3;
+  color: #3085c3;
   background-color: transparent; /* Optional: Remove button background */
   border: none; /* Optional: Remove button border */
   font-size: 24px; /* Adjust icon size */
