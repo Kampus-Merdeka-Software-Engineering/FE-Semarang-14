@@ -3,25 +3,26 @@
 const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
 
 // Create number formatter.
-const NumFormatter = new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
+const NumFormatter = new Intl.NumberFormat("id-ID", {
+  style: "currency",
+  currency: "IDR",
 });
 
 window.onload = async () => {
-    // Best Courses handling
-    var bestCourse = document.getElementById("best-course");
-    fetch(`${BASE_URL}/best_courses`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    }).then((response) => {
-        response.json().then((data) => {
-            let best_courses = data.data;
+  // Best Courses handling
+  var bestCourse = document.getElementById("best-course");
+  fetch(`${BASE_URL}/best_courses`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        let best_courses = data.data;
 
-            var template = best_courses.map((course) => {
-                return `
+        var template = best_courses.map((course) => {
+          return `
                 <div class="course-col">
                     <h3>${course.nama}</h3>
                         <p>
@@ -32,40 +33,42 @@ window.onload = async () => {
                     </div>
                 </div>
                 `;
-            });
-
-            // console.log(template);
-            bestCourse.innerHTML = template.join("");
         });
-    }).catch((error) => {
-        console.log(error);
+
+        // console.log(template);
+        bestCourse.innerHTML = template.join("");
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
 
-    // Testimonials handling
-    var testimoniList = document.getElementById("testimonial-list");
+  // Testimonials handling
+  var testimoniList = document.getElementById("testimonial-list");
 
-    function generateStarRating(rating) {
-        var stars = '';
-        for (var i = rating; i > 0; i--) {
-            stars += '<i class="fa-solid fa-star"></i>';
-        }
-        for (var j = 5 - rating; j > 0; j--) {
-            stars += '<i class="fa-regular fa-star"></i>';
-        }
-        return stars;
+  function generateStarRating(rating) {
+    var stars = "";
+    for (var i = rating; i > 0; i--) {
+      stars += '<i class="fa-solid fa-star"></i>';
     }
-    
-    fetch(`${BASE_URL}/testimonial`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    }).then((response) => {
-        response.json().then((data) => {
-            let testimonials = data.data;
-            
-            var current = testimonials.map((testimonial) => {
-                return `
+    for (var j = 5 - rating; j > 0; j--) {
+      stars += '<i class="fa-regular fa-star"></i>';
+    }
+    return stars;
+  }
+
+  fetch(`${BASE_URL}/testimonial`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        let testimonials = data.data;
+
+        var current = testimonials.map((testimonial) => {
+          return `
                 <div class="testimonial-col">
                     <div class="testimonial-text">
                         <p>
@@ -74,7 +77,9 @@ window.onload = async () => {
                     </div>
                     <div class="profile-section">
                         <div class="profile">
-                            <img src="./assets/images/${testimonial.pesertaDetails.photo}" alt="" />
+                            <img src="./assets/images/${
+                              testimonial.pesertaDetails.photo
+                            }" alt="" />
                             <h3>${testimonial.pesertaDetails.nama}</h3>
                         </div>
                         <div class="testimonial-star">
@@ -83,33 +88,78 @@ window.onload = async () => {
                     </div>
                 </div>
                 `;
-            });
-
-            testimoniList.innerHTML = current.join("");
         });
-    }).catch((error) => {
-        console.log(error);
+
+        testimoniList.innerHTML = current.join("");
+        currentIndex = 0;
+        showTestimonials();
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
 };
 
+const testimonialsContainer = document.querySelector(".testimonial-container");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+let currentIndex = 0;
+
+// show current testimonial
+function showTestimonials() {
+  const testimonialCols = document.querySelectorAll(".testimonial-col");
+  testimonialCols.forEach((col, index) => {
+    col.style.display =
+      index >= currentIndex && index < currentIndex + 2 ? "block" : "none";
+  });
+}
+
+// move next slide
+function moveToNextSlide() {
+  currentIndex += 2;
+  if (currentIndex >= testimonialsContainer.children.length) {
+    currentIndex = 0; // Loop to the first slide if at the end
+  }
+  showTestimonials();
+}
+
+// move prev slide
+function moveToPrevSlide() {
+  currentIndex -= 2;
+  if (currentIndex < 0) {
+    currentIndex = testimonialsContainer.children.length - 2; // Loop to the last slide if at the beginning
+  }
+  showTestimonials();
+}
+
+// interval 5 seconds
+setInterval(moveToNextSlide, 5000);
+
+// call function
+showTestimonials();
+
+// click next and prev
+prevBtn.addEventListener("click", moveToPrevSlide);
+nextBtn.addEventListener("click", moveToNextSlide);
 
 // Modal handling
 var modal = document.getElementById("myModal");
 
 function showModal(id) {
-    modal.style.display = "block";
+  modal.style.display = "block";
 
-    fetch(`${BASE_URL}/courses/${id}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    }).then((response) => {
-        response.json().then((data) => {
-            let course = data.data;
-            // console.log(course);
+  fetch(`${BASE_URL}/courses/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        let course = data.data;
+        // console.log(course);
 
-            var modalTemplate = `
+        var modalTemplate = `
             <div class="modal-course">
                 <div class="modal-course-col">
                     <div class="modal-close">
@@ -141,8 +191,12 @@ function showModal(id) {
 
                             <div class="form-label">
                                 <label for="course">Course <span>:</span></label>
-                                <input type="text" id="course" name="course" value="${course.nama}" readonly>
-                                <input type="hidden" id="id_course" name="id_course" value="${course.id}" readonly>
+                                <input type="text" id="course" name="course" value="${
+                                  course.nama
+                                }" readonly>
+                                <input type="hidden" id="id_course" name="id_course" value="${
+                                  course.id
+                                }" readonly>
                             </div>
 
                             <div class="form-label">
@@ -167,11 +221,12 @@ function showModal(id) {
             </div>
             `;
 
-            // console.log(modalTemplate);
-            modal.innerHTML = modalTemplate;
-        });
-    }).catch((error) => {
-        console.log(error);
+        // console.log(modalTemplate);
+        modal.innerHTML = modalTemplate;
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
 }
 
@@ -179,76 +234,78 @@ function showModal(id) {
 const contactForm = document.getElementById("contactForm");
 
 const submitForm = document.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const id_course = document.getElementById("id_course").value;
-    const nama = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const no_hp = document.getElementById("phone").value;
+  const id_course = document.getElementById("id_course").value;
+  const nama = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const no_hp = document.getElementById("phone").value;
 
-    // validate form with regex
-    const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10,12}$/;
+  // validate form with regex
+  const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[0-9]{10,12}$/;
 
-    if (!nama || !email || !no_hp) {
-        alert("Please fill the form!");
-        return;
-    } else if (!nameRegex.test(nama)) {
-        alert("Please enter a valid name!");
-        return;
-    } else if (!emailRegex.test(email)) {
-        alert("Please enter a valid email!");
-        return;
-    } else if (!phoneRegex.test(no_hp)) {
-        alert("Please enter a valid phone number!");
-        return;
-    }
+  if (!nama || !email || !no_hp) {
+    alert("Please fill the form!");
+    return;
+  } else if (!nameRegex.test(nama)) {
+    alert("Please enter a valid name!");
+    return;
+  } else if (!emailRegex.test(email)) {
+    alert("Please enter a valid email!");
+    return;
+  } else if (!phoneRegex.test(no_hp)) {
+    alert("Please enter a valid phone number!");
+    return;
+  }
 
-    const data = {
-        id_course,
-        nama,
-        email,
-        no_hp,
-    };
+  const data = {
+    id_course,
+    nama,
+    email,
+    no_hp,
+  };
 
-    fetch(`${BASE_URL}/peserta`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    }).then((response) => {
-        response.json().then((data) => {
-            // console.log(data);
-            alert("Success!");
-            closeModal();
-        });
-    }).catch((error) => {
-        console.log(error);
+  fetch(`${BASE_URL}/peserta`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        // console.log(data);
+        alert("Success!");
+        closeModal();
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
 });
 
 // Close Modal
 function closeModal() {
-    modal.style.display = "none";
+  modal.style.display = "none";
 
-    // clear form
-    if (contactForm){
-        contactForm.reset();
-    }
+  // clear form
+  if (contactForm) {
+    contactForm.reset();
+  }
 
-    // clear modal
-    modal.innerHTML = "";
+  // clear modal
+  modal.innerHTML = "";
 
-    // refresh page
-    window.location.reload();
+  // refresh page
+  window.location.reload();
 }
 
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "block";
-    }
+  if (event.target == modal) {
+    modal.style.display = "block";
+  }
 };
 
 // Subscriptions handling
@@ -258,44 +315,45 @@ var input = document.querySelector(".add-email");
 var subscription = document.querySelector(".subscription");
 
 submit.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    if (!email.test(input.value)) {
-        subscription.classList.add("error");
-    } else {
-        subscription.classList.add("done");
-        subscription.classList.remove("error");
-    }
+  e.preventDefault();
+  if (!email.test(input.value)) {
+    subscription.classList.add("error");
+  } else {
+    subscription.classList.add("done");
+    subscription.classList.remove("error");
+  }
 });
 
 const Subscribe = document.addEventListener("submit", async (e) => {
-    
-    e.preventDefault();
-    const email = document.getElementById("add-email").value;
+  e.preventDefault();
+  const email = document.getElementById("add-email").value;
 
-    // validate form with regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if ( !email  ) {
-        alert("Please fill the form!");
-        return;
-    }  else if (!emailRegex.test(email)) {
-        alert("Please enter a valid email!");
-        return;
-    } 
-    
-    const data = { email };
+  // validate form with regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email) {
+    alert("Please fill the form!");
+    return;
+  } else if (!emailRegex.test(email)) {
+    alert("Please enter a valid email!");
+    return;
+  }
 
-    fetch(`${BASE_URL}/subcription`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    }).then((response) => {
-        response.json().then((data) => {
-            // console.log(data);
-            alert("Success!");
-        });
-    }).catch((error) => {
-        console.log(error);
+  const data = { email };
+
+  fetch(`${BASE_URL}/subcription`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        // console.log(data);
+        alert("Success!");
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
 });
