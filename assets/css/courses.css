@@ -1,3 +1,4 @@
+/* Body */
 body {
   font-family: "roboto", sans-serif;
   margin: 0;
@@ -10,19 +11,20 @@ a {
   text-decoration: none;
 }
 
+/* Header */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: #d2daff;
-  /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
   font-weight: bold;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Nav */
 nav {
   display: flex;
   padding: 5px 6%;
@@ -78,6 +80,7 @@ nav .fa {
   display: none;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .text-box h1 {
     font-size: 20px;
@@ -108,7 +111,7 @@ nav .fa {
   }
 }
 
-/* course */
+/* Course */
 .title {
   margin-top: 100px;
   text-align: center;
@@ -134,7 +137,6 @@ nav .fa {
   font-style: normal;
   text-transform: capitalize;
   flex-shrink: 0;
-  /* line-height: 0px; */
 }
 
 .course {
@@ -269,6 +271,7 @@ nav .fa {
   border-radius: 10px;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .course-list {
     flex-direction: column;
@@ -277,18 +280,6 @@ nav .fa {
 
 /* footer */
 /* Footer Container */
-.footer {
-  height: fit-content;
-  background-color: #AAC4FF;
-  padding: 15px 0;
-  border-top: 1px solid #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Footer Rows */
 .footer {
   height: fit-content;
   background-color: #AAC4FF;
@@ -405,6 +396,7 @@ nav .fa {
   color: #606060;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .footer-row {
     width: 100%;
@@ -435,7 +427,6 @@ nav .fa {
 }
 
 /* Modal */
-/* Base styles for modal */
 .modal {
   display: none;
   position: fixed;
@@ -634,6 +625,7 @@ nav .fa {
   border-radius: 10px;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .modal-course-col {
     width: 100%;

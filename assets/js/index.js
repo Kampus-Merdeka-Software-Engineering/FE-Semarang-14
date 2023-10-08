@@ -35,7 +35,6 @@ window.onload = async () => {
                 `;
         });
 
-        // console.log(template);
         bestCourse.innerHTML = template.join("");
       });
     })
@@ -157,7 +156,6 @@ function showModal(id) {
     .then((response) => {
       response.json().then((data) => {
         let course = data.data;
-        // console.log(course);
 
         var modalTemplate = `
             <div class="modal-course">
@@ -221,7 +219,6 @@ function showModal(id) {
             </div>
             `;
 
-        // console.log(modalTemplate);
         modal.innerHTML = modalTemplate;
       });
     })
@@ -276,7 +273,6 @@ const submitForm = document.addEventListener("submit", async (e) => {
   })
     .then((response) => {
       response.json().then((data) => {
-        // console.log(data);
         alert("Success!");
         closeModal();
       });
@@ -349,7 +345,6 @@ const Subscribe = document.addEventListener("submit", async (e) => {
   })
     .then((response) => {
       response.json().then((data) => {
-        // console.log(data);
         alert("Success!");
       });
     })

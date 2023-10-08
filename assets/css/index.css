@@ -1,3 +1,4 @@
+/* Body */
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -21,19 +22,20 @@ h3 {
   margin: 10px 0;
 }
 
+/* Header */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: #d2daff;
-  /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
   font-weight: bold;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Nav */
 nav {
   display: flex;
   padding: 5px 6%;
@@ -89,6 +91,7 @@ nav .fa {
   display: none;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .text-box h1 {
     font-size: 20px;
@@ -128,7 +131,6 @@ nav .fa {
   align-items: center;
   padding: 0 5vh;
   box-sizing: border-box;
-  /* border: 2px solid #c88500; */
   margin: 90px auto 20px auto;
 }
 
@@ -241,15 +243,15 @@ nav .fa {
 .hero .img-box {
   width: 50%;
   position: relative;
-  /* box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); */
 }
 .hero .img-box img {
   bottom: 0;
   right: 0;
   width: 105%;
   height: auto;
-  /* box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); */
 }
+
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -320,6 +322,8 @@ nav .fa {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.301);
 }
+
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .why-us {
     flex-direction: column;
@@ -353,6 +357,7 @@ nav .fa {
   border-bottom: 2px dotted #00000050;
 }
 
+/* Section Button*/
 .section-btn {
   width: 130px;
   height: 40px;
@@ -406,6 +411,8 @@ nav .fa {
 .course-col:hover {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
+
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .course-list {
     flex-direction: column;
@@ -421,7 +428,6 @@ nav .fa {
   align-items: center;
   padding: 0 5vh;
   box-sizing: border-box;
-  /* border: 2px solid #c88500; */
   margin: 90px auto 20px auto;
 }
 
@@ -482,6 +488,7 @@ nav .fa {
   margin-top: 5px;
 }
 
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .learning-info {
     width: 100%;
@@ -574,6 +581,7 @@ nav .fa {
   color: #c88500;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .testimonials {
     width: 100%;
@@ -598,7 +606,7 @@ nav .fa {
 
 /* INSTRUCTOR STYLES */
 .instructor {
-  padding: 15px, 80px; /* Update with your desired padding */
+  padding: 15px, 80px;
   width: 80%;
   padding-top: 20px;
   text-align: center;
@@ -617,7 +625,7 @@ nav .fa {
 
 .instructor-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Adjust as needed */
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 0 15px;
 }
@@ -706,13 +714,12 @@ nav .fa {
 }
 
 /* Media query for smaller screens */
-
 @media (max-width: 768px) {
   .instructor-grid {
     grid-template-columns: repeat(
       2,
       1fr
-    ); /* Adjust as needed for smaller screens */
+    );
   }
 }
 
@@ -721,7 +728,7 @@ nav .fa {
     grid-template-columns: repeat(
       2,
       1fr
-    ); /* Adjust as needed for smaller screens */
+    );
   }
   .instructor-card .social-link a {
     width: 40%;
@@ -754,29 +761,6 @@ nav .fa {
   font-size: 20px;
   color: #fff;
 }
-
-/* call to action */
-/* .cta {
-  margin: 100px auto;
-  width: 80%;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(../images/banner2.png);
-  background-position: center;
-  background-size: contain;
-  border-radius: 10px;
-  text-align: center;
-  padding: 100px 0;
-}
-.cta h1 {
-  color: #fff;
-  margin-bottom: 40px;
-  padding: 0;
-}
-@media (max-width: 768px) {
-  .cta h1 {
-    font-size: 20px;
-  }
-} */
 
 .news-letter {
   margin: 100px auto;
@@ -899,7 +883,6 @@ nav .fa {
 }
 
 /* footer */
-/* Footer Container */
 .footer {
   height: fit-content;
   background-color: #aac4ff;
@@ -1046,7 +1029,6 @@ nav .fa {
 }
 
 /* Modal */
-/* Base styles for modal */
 .modal {
   display: none;
   position: fixed;
@@ -1251,6 +1233,7 @@ nav .fa {
   }
 }
 
+/* Slider */
 .slider-navBtn {
   margin: 10px;
   display: flex;
@@ -1262,11 +1245,11 @@ nav .fa {
 .slider-navBtn button {
   margin: 20px;
   color: #3085c3;
-  background-color: transparent; /* Optional: Remove button background */
-  border: none; /* Optional: Remove button border */
-  font-size: 24px; /* Adjust icon size */
+  background-color: transparent;
+  border: none; 
+  font-size: 24px;
 }
 
 .slider-navBtn button i {
-  font-size: inherit; /* Inherit the font size from the button */
+  font-size: inherit;
 }

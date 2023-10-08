@@ -43,7 +43,6 @@ const submitPesan = document.addEventListener("submit", async (e) => {
         body: JSON.stringify(data),
     }).then((response) => {
         response.json().then((data) => {
-            // console.log(data);
             alert("Success!");
             closeModal();
         });

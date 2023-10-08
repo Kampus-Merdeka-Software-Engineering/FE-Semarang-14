@@ -1,3 +1,4 @@
+/* Body */
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -6,19 +7,20 @@ body {
   background: #EEF1FF;
 }
 
+/* Header */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: #D2DAFF;
-  /* border-bottom: 2px solid #8f8f8f; */
   height: fit-content;
   z-index: 10;
   font-weight: bold;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Nav */
 nav {
   display: flex;
   padding: 5px 6%;
@@ -70,6 +72,7 @@ nav img {
   width: 100%;
 }
 
+/* Title */
 .title {
   margin-top: 100px;
   text-align: center;
@@ -105,6 +108,7 @@ nav img {
   transition: background 0.5s;
 }
 
+/* Text Box */
 .text-box {
   position: absolute;
   top: 50%;
@@ -121,6 +125,8 @@ nav img {
   margin: 10px 0 40px;
   font-size: 14px;
 }
+
+/* Section Button */
 .section-btn {
   border: 1px solid #B1B2FF;
   background: transparent;
@@ -132,6 +138,8 @@ nav img {
 nav .fa {
   display: none;
 }
+
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .text-box h1 {
     font-size: 20px;
@@ -163,7 +171,6 @@ nav .fa {
 }
 
 /*About Us*/
-
 .about-us-row {
   justify-content: center;
 }
@@ -175,7 +182,6 @@ nav .fa {
   font-style: normal;
   text-transform: capitalize;
   flex-shrink: 0;
-  /* line-height: 0px; */
 }
 
 .about-us-text-img {
@@ -205,6 +211,7 @@ nav .fa {
   height: auto;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .about-us-img {
     visibility: hidden;
@@ -221,6 +228,7 @@ nav .fa {
   }
 }
 
+/* Media query for smaller screens */
 @media (max-width: 1000px) {
   .about-us-img {
     visibility: hidden;
@@ -237,7 +245,6 @@ nav .fa {
   }
 }
 
-/* about us page */
 .about-us {
   width: 80%;
   margin: auto;
@@ -343,6 +350,7 @@ nav .fa {
   font-size: 16px;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .why-row {
     width: 80%;
@@ -359,7 +367,7 @@ nav .fa {
   }
 }
 
-/*slider*/
+/*Slider*/
 .slide-container {
   margin: 0 auto;
   max-width: 80%;
@@ -379,6 +387,7 @@ nav .fa {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+/* Media query for smaller screens */
 @media screen and (min-width: 768px) {
   .card {
     width: 30%;
@@ -464,15 +473,16 @@ nav .fa {
 .slider-navBtn button {
   margin: 20px;
   color: #3085C3;
-  background-color: transparent; /* Optional: Remove button background */
-  border: none; /* Optional: Remove button border */
-  font-size: 24px; /* Adjust icon size */
+  background-color: transparent;
+  border: none; 
+  font-size: 24px;
 }
 
 .slider-navBtn button i {
-  font-size: inherit; /* Inherit the font size from the button */
+  font-size: inherit;
 }
 
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .slide-content {
     margin: 0 10px;
@@ -484,13 +494,11 @@ nav .fa {
 }
 
 .card.active {
-  /* Add styles for the active (visible) slide */
   opacity: 1;
   transform: scale(1);
 }
 
 .card.inactive {
-  /* Add styles for the inactive (hidden) slides */
   opacity: 0;
   transform: scale(0.8);
 }
@@ -676,6 +684,7 @@ nav .fa {
   color: #606060;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .footer-row {
     width: 100%;
