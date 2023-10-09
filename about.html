@@ -15,36 +15,70 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+      // Function to show the menu
+      function showMenu() {
+          document.getElementById("navLinks").classList.add("show");
+      }
+  
+      // Function to hide the menu
+      function hideMenu() {
+          document.getElementById("navLinks").classList.remove("show");
+      }
+  
+      // Function to toggle the transparent navbar on scroll
+      window.addEventListener("scroll", function() {
+          var header = document.querySelector(".header");
+          if (window.scrollY > 0) {
+              header.classList.add("navbar-transparent");
+          } else {
+              header.classList.remove("navbar-transparent");
+          }
+      });
+      // JavaScript untuk mengaktifkan animasi "welcome" saat tampilan pertama kali dilihat
+window.addEventListener("load", () => {
+    const title = document.querySelector(".about-us-title h1");
+    const text = document.querySelector(".about-us-text p");
 
+    title.classList.add("animate");
+    text.classList.add("animate");
+});
+// JavaScript untuk mengaktifkan animasi "welcome" saat tampilan pertama kali dilihat
+window.addEventListener("load", () => {
+    const title = document.querySelector(".title-text h1");
+    title.classList.add("animate");
+});
+
+  </script>
 </head>
 
 <body>
   <section class="header">
     <nav>
-      <a href="index.html" class="nav-logo">
-        <img src="./assets/images/logo.png" alt="" />
-        Learn<span>4</span>U
-      </a>
-      <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
-      <div class="nav-links" id="navLinks">
-        <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
-        <ul>
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./courses.html">COURSES</a></li>
-          <li><a href="./contact.html">CONTACT</a></li>
-        </ul>
-      </div>
+        <a href="index.html" class="nav-logo">
+            <img src="./assets/images/logo.png" alt="" />
+            Learn<span>4</span>U
+        </a>
+        <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
+        <div class="nav-links" id="navLinks">
+            <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./courses.html">COURSES</a></li>
+                <li><a href="./about.html">ABOUT</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </div>
     </nav>
-  </section>
+</section>
 
-    <!-- about us -->
   <section class="title">
     <div class="title-text">
-      <h1>About Us</h1>
+      <h1><br>About Us</h1>
     </div>
   </section>
 
+  <!-- about us content -->
   <section class="about-us" id="about-us">
     <div class="about-us-row">
       <div class="about-col">
@@ -53,7 +87,7 @@
         </div>
         <div class="about-us-text-img">
           <div class="about-us-text">
-            </p>
+            <p>
             Selamat datang di Learn4U!
             Ini adalah tempat terbaik untuk memperluas pengetahuan dan keterampilan Anda melalui pembelajaran online.
             Kami adalah sarana pendidikan teknologi yang membantu Anda menjelajahi dunia pendidikan modern dengan mudah.
@@ -67,9 +101,9 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- Team -->
+
   <div class="our-team">
     <div class="our-team-title">
       <h2>Our Teams</h2>
@@ -77,11 +111,11 @@
     </div>
     <div class="slide-container">
       <div class="slide-content">
-        <div class="card">
-          <div class="image-content">
+        <div class="card animate">
+        <div class="image-content">
             <span class="overlay"></span>
             <div class="card-image">
-              <img src="assets/images/apriana.png" alt="apriana" class="card-img">
+              <img src="assets/images/ana.png" alt="" class="card-img">
             </div>
           </div>
           <div class="card-content">
@@ -89,23 +123,23 @@
             <p class="description">Project Leader</p>
           </div>
         </div>
-        <div class="card">
-          <div class="image-content">
+        <div class="card animate">         
+           <div class="image-content">
             <span class="overlay"></span>
             <div class="card-image">
-              <img src="assets/images/athalia.jpeg" alt="athalia" class="card-img">
+              <img src="assets/images/vanya.png" alt="" class="card-img">
             </div>
           </div>
           <div class="card-content">
-            <h2 class="name">Athalia Vanya Rosa Siregar</h2>
+            <h2 class="name">Athalia V.Rosa Siregar</h2>
             <p class="description">Quality Assurance</p>
           </div>
         </div>
-        <div class="card">
+         <div class="card animate">
           <div class="image-content">
             <span class="overlay"></span>
             <div class="card-image">
-              <img src="assets/images/billy.jpeg" alt="billy" class="card-img">
+              <img src="assets/images/billy.png" alt="" class="card-img">
             </div>
           </div>
           <div class="card-content">
@@ -113,11 +147,11 @@
             <p class="description">Back-end Engineer</p>
           </div>
         </div>
-        <div class="card">
-          <div class="image-content">
+        <div class="card animate">
+        <div class="image-content">
             <span class="overlay"></span>
             <div class="card-image">
-              <img src="assets/images/indah aulia.png" alt="indah aulia" class="card-img">
+              <img src="assets/images/indah aulia.png" alt="" class="card-img">
             </div>
           </div>
           <div class="card-content">
@@ -125,11 +159,11 @@
             <p class="description">Front-End Engineer</p>
           </div>
         </div>
-        <div class="card">
-          <div class="image-content">
+        <div class="card animate">
+        <div class="image-content">
             <span class="overlay"></span>
             <div class="card-image">
-              <img src="assets/images/indah nur.jpg" alt="indah nur" class="card-img">
+              <img src="assets/images/indah nur.png" alt="" class="card-img">
             </div>
           </div>
           <div class="card-content">
@@ -137,11 +171,11 @@
             <p class="description">Front-End Engineer</p>
           </div>
         </div>
-        <div class="card">
-          <div class="image-content">
+        <div class="card animate">
+        <div class="image-content">
             <span class="overlay"></span>
             <div class="card-image">
-              <img src="assets/images/arif.jpeg" alt="arif" class="card-img">
+              <img src="assets/images/arif.png" alt="" class="card-img">
             </div>
           </div>
           <div class="card-content">
@@ -156,8 +190,7 @@
       <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
-
-  <!-- why work -->
+<br><br>
   <div class="why-work">
     <div class="why-work-title">
       <h2>Why it's works</h2>
@@ -197,7 +230,8 @@
       </div>
     </div>
   </div>
-
+<br>
+  <!--------- footer --------->
   <!-- Footer -->
   <section class="footer">
     <div class="footer-top">

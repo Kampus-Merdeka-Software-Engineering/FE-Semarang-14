@@ -1,6 +1,5 @@
-/* Body */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "roboto", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,7 +21,6 @@ h3 {
   margin: 10px 0;
 }
 
-/* Header */
 .header {
   position: fixed;
   top: 0;
@@ -33,65 +31,105 @@ h3 {
   z-index: 10;
   font-weight: bold;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
 }
 
-/* Nav */
+.header.navbar-transparent {
+background-color: transparent;
+box-shadow: none;
+}
+
 nav {
-  display: flex;
-  padding: 5px 6%;
-  justify-content: space-between;
-  align-items: center;
+display: flex;
+padding: 5px 6%;
+justify-content: space-between;
+align-items: center;
 }
 nav img {
-  width: 50px;
-  margin-right: 10px;
+width: 50px;
+margin-right: 10px;
 }
 .nav-logo {
-  display: flex;
-  align-items: center;
-  color: black;
-  font-size: 2rem;
-  font-weight: 700;
-  font-style: italic;
-  text-decoration: none;
+display: flex;
+align-items: center;
+color: black;
+font-size: 2rem;
+font-weight: 700;
+font-style: italic;
+text-decoration: none;
 }
 .nav-logo span {
-  font-weight: 700;
-  color: #3f72af;
+font-weight: 700;
+color: #3f72af;
 }
 .nav-links {
-  flex: 1;
-  text-align: right;
+flex: 1;
+text-align: right;
 }
 .nav-links ul li {
-  list-style: none;
-  display: inline-block;
-  padding: 8px 12px;
-  position: relative;
+list-style: none;
+display: inline-block;
+padding: 8px 12px;
+position: relative;
 }
+
 .nav-links ul li a {
-  color: black;
-  text-decoration: none;
-  font-size: 13px;
+color: black;
+text-decoration: none;
+font-size: 13px;
 }
 .nav-links ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #000000;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
+content: "";
+width: 0%;
+height: 2px;
+background: #000000;
+display: block;
+margin: auto;
+transition: 0.5s;
 }
 .nav-links ul li:hover::after {
-  width: 100%;
+width: 100%;
 }
 
 nav .fa {
-  display: none;
+display: none;
 }
 
-/* Media query for smaller screens */
+.text-box1 h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+/* Animasi untuk elemen p */
+.text-box1 p {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+/* Animasi untuk tombol "Visit Us" */
+.learn-more {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+/* Animasi gambar */
+.img-box img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+/* Keyframes untuk animasi fadeInUp */
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .text-box h1 {
     font-size: 20px;
@@ -131,6 +169,7 @@ nav .fa {
   align-items: center;
   padding: 0 5vh;
   box-sizing: border-box;
+  /* border: 2px solid #c88500; */
   margin: 90px auto 20px auto;
 }
 
@@ -243,15 +282,15 @@ nav .fa {
 .hero .img-box {
   width: 50%;
   position: relative;
+  /* box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); */
 }
 .hero .img-box img {
   bottom: 0;
   right: 0;
   width: 105%;
   height: auto;
+  /* box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); */
 }
-
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -322,8 +361,6 @@ nav .fa {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.301);
 }
-
-/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .why-us {
     flex-direction: column;
@@ -357,7 +394,6 @@ nav .fa {
   border-bottom: 2px dotted #00000050;
 }
 
-/* Section Button*/
 .section-btn {
   width: 130px;
   height: 40px;
@@ -411,8 +447,6 @@ nav .fa {
 .course-col:hover {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
-
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .course-list {
     flex-direction: column;
@@ -428,6 +462,7 @@ nav .fa {
   align-items: center;
   padding: 0 5vh;
   box-sizing: border-box;
+  /* border: 2px solid #c88500; */
   margin: 90px auto 20px auto;
 }
 
@@ -488,7 +523,6 @@ nav .fa {
   margin-top: 5px;
 }
 
-/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .learning-info {
     width: 100%;
@@ -502,7 +536,8 @@ nav .fa {
 
 /* testimonials */
 .testimonials {
-  width: 80%;
+  
+  width: 100%;
   margin: auto;
   padding-top: 20px;
   text-align: center;
@@ -510,14 +545,10 @@ nav .fa {
 
 .testimonial-container {
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: 100%;
-  margin: auto;
-  padding-top: 20px;
-  text-align: center;
+  transition: transform 1s ease; /* Animasi perpindahan */
+  overflow-x: hidden; /* Sembunyikan konten yang melebihi container */
+  overflow-y: hidden; 
 }
-
 .testimonial-row {
   margin-top: 3%;
   display: flex;
@@ -581,7 +612,87 @@ nav .fa {
   color: #c88500;
 }
 
-/* Media query for smaller screens */
+/* Bagian umum */
+.testimonials {
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* Animasi untuk muncul */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Testimonial Card */
+.testimonial-col {
+  flex-basis: 44%;
+  border-radius: 10px;
+  text-align: left;
+  background: #eef1ff;
+  padding: 25px;
+  cursor: pointer;
+  flex-direction: column;
+  display: flex;
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  animation: slideIn 0.5s ease; /* Tambahkan animasi slideIn */
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+/* Testimonial Star Icons */
+.testimonial-star {
+  display: flex;
+  justify-content: center;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+  text-align: justify;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+/* Profile Info */
+.testimonials .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+}
+
+.testimonials .profile img {
+  max-width: 100%;
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.testimonial-col .profile h3 {
+  margin-top: 10px;
+}
+
+.testimonial-col i {
+  color: #c88500;
+}
+
+
 @media (max-width: 768px) {
   .testimonials {
     width: 100%;
@@ -606,7 +717,7 @@ nav .fa {
 
 /* INSTRUCTOR STYLES */
 .instructor {
-  padding: 15px, 80px;
+  padding: 15px, 80px; /* Update with your desired padding */
   width: 80%;
   padding-top: 20px;
   text-align: center;
@@ -625,7 +736,7 @@ nav .fa {
 
 .instructor-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Adjust as needed */
   gap: 30px;
   padding: 0 15px;
 }
@@ -714,12 +825,13 @@ nav .fa {
 }
 
 /* Media query for smaller screens */
+
 @media (max-width: 768px) {
   .instructor-grid {
     grid-template-columns: repeat(
       2,
       1fr
-    );
+    ); /* Adjust as needed for smaller screens */
   }
 }
 
@@ -728,7 +840,7 @@ nav .fa {
     grid-template-columns: repeat(
       2,
       1fr
-    );
+    ); /* Adjust as needed for smaller screens */
   }
   .instructor-card .social-link a {
     width: 40%;
@@ -761,6 +873,29 @@ nav .fa {
   font-size: 20px;
   color: #fff;
 }
+
+/* call to action */
+/* .cta {
+  margin: 100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../images/banner2.png);
+  background-position: center;
+  background-size: contain;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
+.cta h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .cta h1 {
+    font-size: 20px;
+  }
+} */
 
 .news-letter {
   margin: 100px auto;
@@ -883,6 +1018,7 @@ nav .fa {
 }
 
 /* footer */
+/* Footer Container */
 .footer {
   height: fit-content;
   background-color: #aac4ff;
@@ -1029,6 +1165,7 @@ nav .fa {
 }
 
 /* Modal */
+/* Base styles for modal */
 .modal {
   display: none;
   position: fixed;
@@ -1233,7 +1370,6 @@ nav .fa {
   }
 }
 
-/* Slider */
 .slider-navBtn {
   margin: 10px;
   display: flex;
@@ -1245,11 +1381,11 @@ nav .fa {
 .slider-navBtn button {
   margin: 20px;
   color: #3085c3;
-  background-color: transparent;
-  border: none; 
-  font-size: 24px;
+  background-color: transparent; /* Optional: Remove button background */
+  border: none; /* Optional: Remove button border */
+  font-size: 24px; /* Adjust icon size */
 }
 
 .slider-navBtn button i {
-  font-size: inherit;
+  font-size: inherit; /* Inherit the font size from the button */
 }

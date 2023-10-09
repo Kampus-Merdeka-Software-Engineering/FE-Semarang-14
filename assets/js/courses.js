@@ -19,6 +19,7 @@ window.onload = async () => {
     }).then((response) => {
         response.json().then((data) => {
             let courses = data.data;
+            // console.log(courses);
 
             var template = courses.map((course) => {
                 return `
@@ -50,6 +51,7 @@ window.onload = async () => {
                 `;
             });
 
+            // console.log(template);
             courseList.innerHTML = template.join("");
         });
     }).catch((error) => {
@@ -71,6 +73,7 @@ function showModal(id) {
     }).then((response) => {
         response.json().then((data) => {
             let course = data.data;
+            // console.log(course);
 
             var modalTemplate = `
             <div class="modal-course">
@@ -130,6 +133,7 @@ function showModal(id) {
             </div>
             `;
 
+            // console.log(modalTemplate);
             modal.innerHTML = modalTemplate;
         });
     }).catch((error) => {
@@ -138,6 +142,8 @@ function showModal(id) {
 }
 
 // Form Handling
+const contactForm = document.getElementById("contactForm");
+
 const submit = document.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -180,6 +186,7 @@ const submit = document.addEventListener("submit", async (e) => {
         body: JSON.stringify(data),
     }).then((response) => {
         response.json().then((data) => {
+            // console.log(data);
             alert("Success!");
             closeModal();
         });

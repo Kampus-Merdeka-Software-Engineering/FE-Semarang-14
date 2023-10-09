@@ -3,6 +3,8 @@
 const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
 
 // Form Handling
+const pesanForm = document.getElementById("pesanForm");
+
 const submitPesan = document.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -41,6 +43,7 @@ const submitPesan = document.addEventListener("submit", async (e) => {
         body: JSON.stringify(data),
     }).then((response) => {
         response.json().then((data) => {
+            // console.log(data);
             alert("Success!");
             closeModal();
         });
