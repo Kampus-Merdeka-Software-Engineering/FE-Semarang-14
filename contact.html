@@ -15,54 +15,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script>
-      // Function to show the menu
-      function showMenu() {
-          document.getElementById("navLinks").classList.add("show");
-      }
-  
-      // Function to hide the menu
-      function hideMenu() {
-          document.getElementById("navLinks").classList.remove("show");
-      }
-  
-      // Function to toggle the transparent navbar on scroll
-      window.addEventListener("scroll", function() {
-          var header = document.querySelector(".header");
-          if (window.scrollY > 0) {
-              header.classList.add("navbar-transparent");
-          } else {
-              header.classList.remove("navbar-transparent");
-          }
-      });
-  </script>
 </head>
 
 <body>
   <section class="header">
     <nav>
-        <a href="index.html" class="nav-logo">
-            <img src="./assets/images/logo.png" alt="" />
-            Learn<span>4</span>U
-        </a>
-        <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
-        <div class="nav-links" id="navLinks">
-            <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
-            <ul>
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="./courses.html">COURSES</a></li>
-                <li><a href="./about.html">ABOUT</a></li>
-                <li><a href="./contact.html">CONTACT</a></li>
-            </ul>
-        </div>
+      <a href="index.html" class="nav-logo">
+        <img src="./assets/images/logo.png" alt="" />
+        Learn<span>4</span>U
+      </a>
+      <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
+      <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./courses.html">COURSES</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
+        </ul>
+      </div>
     </nav>
-</section>
-  <!--------contact us--------->
+  </section>
+  
+  <!--contact us-->
   <section class="location">
-    <div class="title-text">
-      <h1>Location</h1>
-    </div>
     <iframe
       src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=semarang&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -95,20 +71,17 @@
         </div>
       </div>
       <div class="contact-col">
-        <h1 style="font-size: 32px;">Hubungi Kami!</h1>
         <form id="pesanForm" action="form-handler.php" method="post">
-          <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
-          <input type="email" name="email" id="email" placeholder="Enter Email" required>
-          <input type="text" name="subject" id="subject" placeholder="Enter Your Subject" required>
-          <textarea rows="8" name="message" id="message" placeholder="Message" required></textarea>
+          <input type="text" name="name" id="name" placeholder="Enter Your Name">
+          <input type="email" name="email" id="email" placeholder="Enter Email" >
+          <input type="text" name="subject" id="subject" placeholder="Enter Your Subject">
+          <textarea rows="8" name="message" id="message" placeholder="Message"></textarea>
           <button type="submit" class="hero-btn section-btn" id="submitPesan">Send Message</button>
         </form>
       </div>
     </div>
   </section>
 
-  <br><br>
-  <!--------- footer --------->
   <!-- Footer -->
   <section class="footer">
     <div class="footer-top">

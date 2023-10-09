@@ -1,3 +1,4 @@
+/* Body */
 body {
   font-family: "roboto", sans-serif;
   margin: 0;
@@ -10,24 +11,20 @@ a {
   text-decoration: none;
 }
 
+/* Header */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #d2daff;
-    height: fit-content;
-    z-index: 10;
-    font-weight: bold;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #d2daff;
+  height: fit-content;
+  z-index: 10;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header.navbar-transparent {
-  background-color: transparent;
-  box-shadow: none;
-}
-
+/* Nav */
 nav {
   display: flex;
   padding: 5px 6%;
@@ -61,13 +58,6 @@ nav img {
   padding: 8px 12px;
   position: relative;
 }
-
-.nav-links ul li a.active {
-  color: #3f72af; /* Warna teks yang aktif */
-  border-bottom: 2px solid #3f72af; /* Garis bawah yang aktif */
-  /* Atau efek visual lainnya yang Anda inginkan */
-}
-
 .nav-links ul li a {
   color: black;
   text-decoration: none;
@@ -90,29 +80,7 @@ nav .fa {
   display: none;
 }
 
-h1 {
-  font-family: Arial, sans-serif; /* Jenis font */
-  font-size: 35px; /* Ukuran font */
-  color: #333; /* Warna teks */
-  font-weight: bold;
-  text-align: center; /* Pusatkan teks (opsional) */
-  margin-top: 20px; /* Jarak atas dari elemen di atasnya (opsional) */
-  margin-bottom: 20px; /* Jarak bawah dari elemen di bawahnya (opsional) */
-  opacity: 0; /* Mulai dengan keadaan tidak terlihat */
-  animation: fadeIn 1s ease-in-out forwards; /* Animasi fade-in */
-}
-
-/* Keyframes untuk animasi fade-in */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .text-box h1 {
     font-size: 20px;
@@ -143,7 +111,7 @@ h1 {
   }
 }
 
-/* course */
+/* Course */
 .title {
   margin-top: 100px;
   text-align: center;
@@ -169,7 +137,6 @@ h1 {
   font-style: normal;
   text-transform: capitalize;
   flex-shrink: 0;
-  /* line-height: 0px; */
 }
 
 .course {
@@ -192,31 +159,13 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 auto;  
-}
-
-@keyframes fade-in-animation {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Terapkan animasi keyframes ke elemen dengan kelas "fade-in" */
-.fade-in {
-  animation: fade-in-animation 1s ease-in-out forwards; /* Durasi dan efek transisi */
-  opacity: 0; /* Set opacitas awal ke 0 */
+  margin: 0 auto;
 }
 
 .course-col {
   margin: 0 auto;
   width: 100%;
   display: flex;
-  transform: translateY(10px);
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff3f3;
@@ -229,7 +178,7 @@ h1 {
 }
 
 .course-col:hover {
-  transform: translateY(0); /* Mengubah translateY ke 0 saat cursor mengenai elemen */
+  box-shadow: 10px 500px 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .course-col .course-btn {
@@ -322,6 +271,7 @@ h1 {
   border-radius: 10px;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .course-list {
     flex-direction: column;
@@ -330,18 +280,6 @@ h1 {
 
 /* footer */
 /* Footer Container */
-.footer {
-  height: fit-content;
-  background-color: #AAC4FF;
-  padding: 15px 0;
-  border-top: 1px solid #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Footer Rows */
 .footer {
   height: fit-content;
   background-color: #AAC4FF;
@@ -458,6 +396,7 @@ h1 {
   color: #606060;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .footer-row {
     width: 100%;
@@ -488,7 +427,6 @@ h1 {
 }
 
 /* Modal */
-/* Base styles for modal */
 .modal {
   display: none;
   position: fixed;
@@ -687,6 +625,7 @@ h1 {
   border-radius: 10px;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .modal-course-col {
     width: 100%;
