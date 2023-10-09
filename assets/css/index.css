@@ -28,7 +28,6 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #d2daff;
   height: fit-content;
   z-index: 10;
   font-weight: bold;
@@ -41,7 +40,15 @@ nav {
   padding: 5px 6%;
   justify-content: space-between;
   align-items: center;
+  background-color: #d2daff;
+  transition: background-color 0.4s ease; /* Animasi perubahan warna latar belakang */
+  z-index: 100;
 }
+
+.nav-transparent {
+  background-color: rgba(255, 255, 255, 0); /* Warna latar belakang navbar transparan */
+}
+
 nav img {
   width: 50px;
   margin-right: 10px;
@@ -89,6 +96,91 @@ nav img {
 
 nav .fa {
   display: none;
+}
+
+.text-box1 h1 {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.text-box1 h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+/* Animasi untuk elemen p */
+.text-box1 p {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+/* Animasi untuk tombol "Visit Us" */
+.learn-more {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+/* Animasi gambar */
+.img-box img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+/* Keyframes untuk animasi fadeInUp */
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.testimonials p, .testimonial-container, .testimonial-row {
+  opacity: 0; /* Awalnya elemen ini transparan */
+  transform: translateY(20px); /* Awalnya elemen ini tergeser ke bawah */
+  animation: fadeInUp 1s ease forwards; /* Animasi muncul dari bawah */
+}
+
+.course {
+  position: relative;
+  overflow: hidden;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease; /* Animasi perubahan transformasi */
+}
+
+/* Animasi slide dengan transform translate */
+.course-list.active {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+}
+
+.course-list.inactive-left {
+  transform: translateX(-100%);
+}
+
+.course-list.inactive-right {
+  transform: translateX(100%);
+}
+
+/* Animasi muncul dari bawah */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Media query for smaller screens */
@@ -214,7 +306,7 @@ nav .fa {
   transform: rotate(45deg);
 }
 .hero button.learn-more .button-text {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
   left: 0;
@@ -222,22 +314,27 @@ nav .fa {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #222831;
+  color: transparent; /* Teks diubah menjadi transparan */
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  transform: translateX(100%); /* Menggeser teks ke bawah */
 }
+
 .hero button:hover .circle {
   width: 100%;
 }
+
 .hero button:hover .circle .icon.arrow {
   background: #fff;
   transform: translate(1rem, 0);
 }
+
 .hero button:hover .button-text {
   color: #fff;
+  transform: translateY(0); /* Menggeser teks kembali ke posisi semula saat dihover */
 }
 
 .hero .img-box {
@@ -295,6 +392,14 @@ nav .fa {
   border-radius: 10px;
   color: #fff;
 }
+
+/* Animasi hover untuk ikon */
+.why-us-col .icons img:hover {
+  transform: scale(1.2); /* Ubah ukuran ikon saat dihover */
+  transition: transform 0.3s ease; /* Animasi perubahan ukuran */
+}
+
+
 .why-us-col {
   display: flex;
   flex-basis: 31%;
