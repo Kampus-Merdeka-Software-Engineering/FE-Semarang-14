@@ -42,6 +42,18 @@ window.onload = async () => {
       console.log(error);
     });
 
+  //AnimasiTransparanscroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('nav');
+      if (window.scrollY > 50) { 
+        navbar.classList.add('nav-transparent');
+      } else {
+        navbar.classList.remove('nav-transparent');
+      }
+    });
+    
+    
+  
   // Testimonials handling
   var testimoniList = document.getElementById("testimonial-list");
 
@@ -142,6 +154,8 @@ prevBtn.addEventListener("click", moveToPrevSlide);
 nextBtn.addEventListener("click", moveToNextSlide);
 
 // Modal handling
+
+
 var modal = document.getElementById("myModal");
 
 function showModal(id) {
@@ -226,6 +240,8 @@ function showModal(id) {
       console.log(error);
     });
 }
+
+
 
 // Form Handling
 const submitForm = document.addEventListener("submit", async (e) => {
