@@ -228,8 +228,6 @@ function showModal(id) {
 }
 
 // Form Handling
-const contactForm = document.getElementById("contactForm");
-
 const submitForm = document.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -314,41 +312,28 @@ submit.addEventListener("mousedown", (e) => {
   e.preventDefault();
   if (!email.test(input.value)) {
     subscription.classList.add("error");
+    alert("Please enter a valid email!");
   } else {
     subscription.classList.add("done");
     subscription.classList.remove("error");
-  }
-});
-
-const Subscribe = document.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = document.getElementById("add-email").value;
-
-  // validate form with regex
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email) {
-    alert("Please fill the form!");
-    return;
-  } else if (!emailRegex.test(email)) {
-    alert("Please enter a valid email!");
-    return;
-  }
-
-  const data = { email };
-
-  fetch(`${BASE_URL}/subcription`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => {
-      response.json().then((data) => {
-        alert("Success!");
-      });
+    
+    const email = document.getElementById("add-email").value;
+    const data = { email };
+  
+    fetch(`${BASE_URL}/subcription`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then((response) => {
+        response.json().then((data) => {
+          alert("Success!");
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 });

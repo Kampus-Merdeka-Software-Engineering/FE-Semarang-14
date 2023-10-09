@@ -138,8 +138,6 @@ function showModal(id) {
 }
 
 // Form Handling
-const contactForm = document.getElementById("contactForm");
-
 const submit = document.addEventListener("submit", async (e) => {
     e.preventDefault();
 
