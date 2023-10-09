@@ -13,7 +13,6 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #D2DAFF;
   height: fit-content;
   z-index: 10;
   font-weight: bold;
@@ -26,6 +25,13 @@ nav {
   padding: 5px 6%;
   justify-content: space-between;
   align-items: center;
+  background-color: #d2daff;
+  transition: background-color 0.4s ease; /* Animasi perubahan warna latar belakang */
+  z-index: 100;
+}
+
+.nav-transparent {
+  background-color: rgba(255, 255, 255, 0); /* Warna latar belakang navbar transparan */
 }
 nav img {
   width: 50px;
@@ -137,6 +143,126 @@ nav img {
 }
 nav .fa {
   display: none;
+}
+
+.about-us {
+  color: #B1B2FF;
+  color: #000000;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.about-us-title {
+  animation: fadeInUp 1s ease both;
+}
+
+.about-us-text {
+  animation: fadeInLeft 1s ease both;
+}
+
+.about-us-img {
+  animation: fadeInRight 1s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  max-width: 90%;
+  margin: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+  color: #333;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-content {
+  transform: translateY(-15px);
 }
 
 /* Media query for smaller screens */

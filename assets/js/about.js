@@ -1,3 +1,12 @@
+  //AnimasiTransparanscroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('nav');
+    if (window.scrollY > 50) { 
+      navbar.classList.add('nav-transparent');
+    } else {
+      navbar.classList.remove('nav-transparent');
+    }
+  });
 // Slider
 function handleScreenWidth() {
     const screenWidth = window.innerWidth;
@@ -81,7 +90,9 @@ function handleScreenWidth() {
     }
   }
   
+  
   window.addEventListener("resize", handleScreenWidth);
   
   handleScreenWidth();
+  
   

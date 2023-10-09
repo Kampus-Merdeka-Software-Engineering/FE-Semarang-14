@@ -2,6 +2,15 @@
 // const BASE_URL = "http://localhost:3000/api"; // Localhost
 const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Production
 
+  //AnimasiTransparanscroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('nav');
+    if (window.scrollY > 50) { 
+      navbar.classList.add('nav-transparent');
+    } else {
+      navbar.classList.remove('nav-transparent');
+    }
+  });
 // Form Handling
 const submitPesan = document.addEventListener("submit", async (e) => {
     e.preventDefault();
