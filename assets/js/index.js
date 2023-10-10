@@ -328,9 +328,6 @@ submit.addEventListener("mousedown", (e) => {
     subscription.classList.add("error");
     alert("Please enter a valid email!");
   } else {
-    subscription.classList.add("done");
-    subscription.classList.remove("error");
-    
     const email = document.getElementById("add-email").value;
     const data = { email };
   
@@ -341,13 +338,19 @@ submit.addEventListener("mousedown", (e) => {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => {
-        response.json().then((data) => {
-          alert("Success!");
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    .then((response) => {
+      if (response.status == 400) {
+        subscription.classList.add("error");
+        alert("Email already exists!");
+      } else {
+        subscription.classList.add("done");
+        subscription.classList.remove("error");
+        submit.disabled = true;
+        alert("Success!");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 });
