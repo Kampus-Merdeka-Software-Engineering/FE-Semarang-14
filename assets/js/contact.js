@@ -42,7 +42,10 @@ const submitPesan = document.addEventListener("submit", async (e) => {
     }).then((response) => {
         response.json().then((data) => {
             alert("Success!");
-            closeModal();
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
         });
     }).catch((error) => {
         console.log(error);
