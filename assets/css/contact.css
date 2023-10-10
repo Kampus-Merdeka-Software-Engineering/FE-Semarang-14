@@ -6,6 +6,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Header */
 .header {
   position: fixed;
   top: 0;
@@ -24,12 +25,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #d2daff;
-  transition: background-color 0.4s ease; /* Animasi perubahan warna latar belakang */
+  transition: background-color 0.4s ease;
   z-index: 100;
 }
 
 .nav-transparent {
-  background-color: rgba(255, 255, 255, 0); /* Warna latar belakang navbar transparan */
+  background-color: rgba(255, 255, 255, 0);
 }
 
 nav img {
@@ -160,23 +161,23 @@ form textarea {
   transition: border-color 0.3s ease-in-out;
 }
 
-/* Gaya saat elemen mendapatkan fokus */
+
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form textarea:focus {
-  border-color: #007bff; /* Ubah warna sesuai keinginan Anda */
+  border-color: #007bff;
   outline: none;
 }
 
 /* Gaya saat tombol dihover */
 form button:hover {
-  background-color: #007bff; /* Ubah warna sesuai keinginan Anda */
+  background-color: #007bff;
   color: #fff;
 }
 
 /* Gaya saat tombol diklik */
 form button:active {
-  background-color: #0056b3; /* Warna saat tombol diklik */
+  background-color: #0056b3;
 }
 .hero-btn {
   border-radius: 20px;

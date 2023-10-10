@@ -112,27 +112,24 @@ nav .fa {
   animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
-/* Animasi untuk elemen p */
+/* Animasi */
 .text-box1 p {
   opacity: 0;
   animation: fadeInUp 1s ease-out 1s forwards;
 }
 
-/* Animasi untuk tombol "Visit Us" */
 .learn-more {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease-out 1s forwards;
 }
 
-/* Animasi gambar */
 .img-box img {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease-out 1s forwards;
 }
 
-/* Keyframes untuk animasi fadeInUp */
 @keyframes fadeInUp {
   to {
       opacity: 1;
@@ -141,9 +138,9 @@ nav .fa {
 }
 
 .testimonials p, .testimonial-container, .testimonial-row {
-  opacity: 0; /* Awalnya elemen ini transparan */
-  transform: translateY(20px); /* Awalnya elemen ini tergeser ke bawah */
-  animation: fadeInUp 1s ease forwards; /* Animasi muncul dari bawah */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
 }
 
 .course {
@@ -154,10 +151,9 @@ nav .fa {
 .course-list {
   display: flex;
   flex-wrap: nowrap;
-  transition: transform 0.5s ease; /* Animasi perubahan transformasi */
+  transition: transform 0.5s ease;
 }
 
-/* Animasi slide dengan transform translate */
 .course-list.active {
   transform: translateX(0);
   transition: transform 0.5s ease;
@@ -171,7 +167,6 @@ nav .fa {
   transform: translateX(100%);
 }
 
-/* Animasi muncul dari bawah */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -314,13 +309,13 @@ nav .fa {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: transparent; /* Teks diubah menjadi transparan */
+  color: transparent;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  transform: translateX(100%); /* Menggeser teks ke bawah */
+  transform: translateX(100%);
 }
 
 .hero button:hover .circle {
@@ -334,7 +329,7 @@ nav .fa {
 
 .hero button:hover .button-text {
   color: #fff;
-  transform: translateY(0); /* Menggeser teks kembali ke posisi semula saat dihover */
+  transform: translateY(0);
 }
 
 .hero .img-box {
@@ -395,8 +390,8 @@ nav .fa {
 
 /* Animasi hover untuk ikon */
 .why-us-col .icons img:hover {
-  transform: scale(1.2); /* Ubah ukuran ikon saat dihover */
-  transition: transform 0.3s ease; /* Animasi perubahan ukuran */
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
 
 

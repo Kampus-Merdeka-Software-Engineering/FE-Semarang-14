@@ -7,7 +7,7 @@ const BASE_URL = "https://be-semarang-14-production.up.railway.app/api"; // Prod
 const NumFormatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
-  });
+});
 
 const courseList = document.getElementById("course-list");
 window.onload = async () => {
@@ -58,14 +58,14 @@ window.onload = async () => {
 };
 
   //AnimasiTransparanscroll
-  window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function() {
     const navbar = document.querySelector('nav');
     if (window.scrollY > 50) { 
-      navbar.classList.add('nav-transparent');
+        navbar.classList.add('nav-transparent');
     } else {
-      navbar.classList.remove('nav-transparent');
+        navbar.classList.remove('nav-transparent');
     }
-  });
+});
 
 // Modal Handling
 var modal = document.getElementById("myModal");

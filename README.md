@@ -5,4 +5,4 @@ Selamat datang di repositori web Learn4U. Capstone Project ini dirancang dan dik
 
 # Learn4U
 Selamat datang di Learn 4U - Solusi Terbaik Pendidikan Online!
-Learn4U adalah sebuah situs web pendidikan yang menawarkan berbagai jenis kursus untuk meningkatkan pengetahuan dan keterampilan Anda. Dengan beragam pilihan kursus yang tersedia, Learn4U menyediakan akses ke pembelajaran online yang dapat disesuaikan dengan kebutuhan Anda. 
+Learn4U adalah sebuah situs web pendidikan yang menawarkan berbagai jenis kursus untuk meningkatkan pengetahuan dan keterampilan Anda. Dengan beragam pilihan kursus yang tersedia, Learn4U menyediakan akses ke pembelajaran online yang dapat disesuaikan dengan kebutuhan Anda.

@@ -129,7 +129,7 @@ function showTestimonials() {
 function moveToNextSlide() {
   currentIndex += 2;
   if (currentIndex >= testimonialsContainer.children.length) {
-    currentIndex = 0; // Loop to the first slide if at the end
+    currentIndex = 0;
   }
   showTestimonials();
 }
@@ -138,7 +138,7 @@ function moveToNextSlide() {
 function moveToPrevSlide() {
   currentIndex -= 2;
   if (currentIndex < 0) {
-    currentIndex = testimonialsContainer.children.length - 2; // Loop to the last slide if at the beginning
+    currentIndex = testimonialsContainer.children.length - 2;
   }
   showTestimonials();
 }
@@ -154,8 +154,6 @@ prevBtn.addEventListener("click", moveToPrevSlide);
 nextBtn.addEventListener("click", moveToNextSlide);
 
 // Modal handling
-
-
 var modal = document.getElementById("myModal");
 
 function showModal(id) {
