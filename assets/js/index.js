@@ -42,18 +42,6 @@ window.onload = async () => {
       console.log(error);
     });
 
-  //AnimasiTransparanscroll
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('nav');
-      if (window.scrollY > 50) { 
-        navbar.classList.add('nav-transparent');
-      } else {
-        navbar.classList.remove('nav-transparent');
-      }
-    });
-    
-    
-  
   // Testimonials handling
   var testimoniList = document.getElementById("testimonial-list");
 
