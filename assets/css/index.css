@@ -536,12 +536,12 @@ nav .fa {
   margin: 90px auto 20px auto;
 }
 
-.learning-info .img-box {
+.learning-info .img-card {
   width: 50%;
   position: relative;
 }
 
-.learning-info .img-box img {
+.learning-info .img-card img {
   bottom: 0;
   right: 0;
   width: 90%;
@@ -600,7 +600,7 @@ nav .fa {
     justify-content: center;
   }
 
-  .img-box {
+  .img-card {
     display: none;
   }
 }
